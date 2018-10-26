@@ -1,0 +1,1 @@
+The ER Diagram is a diagram documenting Entities and their relationships. Our PLU Club app has four main entites: Clubs, Users, Events, and Interests. These four entities have many relationships that can be explained by the ER diagram's connection between any two entities.
