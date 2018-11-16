@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ClubView</string>
+    <string name="join">Join</string>
+    <string name="contact">Contact</string>
+
+    <string name="hello_blank_fragment">Here are some events</string>
+    <string name="picture_of_the_clubs">Picture of the clubs</string>
+    <string name="club_example">Club Example</string>
+    <string name="chooser_title">Send an Email</string>
+    <string name="email">example@plu.edu</string>
+</resources>
