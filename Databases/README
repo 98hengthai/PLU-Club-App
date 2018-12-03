@@ -1,1 +1,9 @@
 The ER Diagram is a diagram documenting Entities and their relationships. Our PLU Club app has four main entites: Clubs, Users, Events, and Interests. These four entities have many relationships that can be explained by the ER diagram's connection between any two entities.
+
+TO INSTALL THE DB:
+You must have SQLite and SQLite Studio installed already to run the machine
+Create a new database, title it whatever you like
+Open the database, making sure you are connected to it
+Right-click the database and click Execute SQL from File
+Navigate to the sql file in this directory and click ok
+Hit F5 on the database to refresh it
