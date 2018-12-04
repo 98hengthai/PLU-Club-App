@@ -78,7 +78,7 @@ public class DatabaseCommands {
             Statement stmt = conn.createStatement();
             sql = "SELECT * " +
                     "FROM Clubs " +
-                    "WHERE Name LIKE "  + name + " " +
+                    "WHERE Name LIKE \""  + name + "\" " +
                     "ORDER BY Name ";
             rs = stmt.executeQuery(sql);
         } catch (SQLException e) {
@@ -101,8 +101,9 @@ public class DatabaseCommands {
             sql = "SELECT * " +
                     "FROM Clubs as c join ClubInterests as ci " +
                     "ON c.Name = ci.ClubName " +
-                    "AND ci.InterestName = " + interest + " " +
+                    "AND ci.InterestName = \"" + interest + "\" " +
                     "ORDER BY Name ";
+            rs = stmt.executeQuery(sql);
         } catch (SQLException e) {
             System.out.println("GetAllClubsIntSearch error " + e.getMessage() + sql);
         }
