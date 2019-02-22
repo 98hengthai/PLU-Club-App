@@ -1,9 +1,19 @@
 import com.google.gson.Gson;
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
 import static spark.Spark.*;
 
 public class SparkRestExample {
     public static void main(String[] args) {
         final UserService userService = new UserServiceMapImpl();
+        Controller controller = new Controller();
+
+        //return JSONArray of userEmails
+        get("/userEmails", controller.getAllUserEmails());
+
+
 
         post("/users", (request, response) -> {
             response.type("application/json");
