@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidApp/app/app/src/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/AndroidApp/app/app/src/androidTest/androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AndroidApp/app/app/src/main/main.iml" filepath="$PROJECT_DIR$/AndroidApp/app/app/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/Server/src/main/main1.iml" filepath="$PROJECT_DIR$/Server/src/main/main1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AndroidApp/app/app/src/test/test.iml" filepath="$PROJECT_DIR$/AndroidApp/app/app/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-app.iml" filepath="$PROJECT_DIR$/my-app.iml" />
     </modules>
   </component>
 </project>
