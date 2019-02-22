@@ -34,9 +34,9 @@ public class Club {
     public void setDescription(String description) { this.description = description; }
 
     public String toString() {
-        return new StringBuilder("Name: %s\n" +
-                "Location: %s\n" +
-                "Club Email: %s\n" +
-                "Description: %s").toString();
+        return new StringBuilder("Name: " + this.getName() +
+                " Location: " + this.getLocation() +
+                " Club Email: " + this.getClubEmail() +
+                " Description: " + this.getDescription()).toString();
     }
 }

@@ -5,7 +5,7 @@ import java.util.Collection;
  *  for club entities.
  */
 public interface IClubRepo {
-    public void addClub(Club club);
+    public boolean createClub(Club club);
 
     public Collection<Club> getClubs();
 
