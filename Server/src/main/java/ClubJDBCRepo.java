@@ -4,23 +4,10 @@ import java.util.List;
 import java.sql.*;
 
 public class ClubJDBCRepo implements IClubRepo{
-    private Connection conn = null;
+    private Connection conn;
 
-    //Constructor
-    public ClubJDBCRepo() { connect(); }
-
-    //Connect to database
-    private void connect(){
-        try{
-            //Create database connection
-            String url = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
-            conn = DriverManager.getConnection(url);
-
-            //System.out.println("Connection to SQLite has been established");
-        } catch (SQLException e) {
-            System.out.println("Error in connection to SQLite, " + e.getMessage());
-        }
-    }
+    //Constructor + Establish connection
+    public ClubJDBCRepo() { conn = new DatabaseConnection().getConnection(); }
 
     @Override
     public boolean createClub(Club club) {
