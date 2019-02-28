@@ -12,7 +12,8 @@ public class DatabaseCommands {
     public void connect(){
         try{
             //Create database connection    //This url is where the file ClubDatabase is located. Mine is in my downloads folder.
-            String url = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
+//            String url = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
+            String url = "jdbc:sqlite:/C:/Users/hengt/Documents/GitHub/pluclubapp/Databases/ClubDatabase";
             conn = DriverManager.getConnection(url);
 
             System.out.println("Connection to SQLite has been established");
@@ -294,5 +295,9 @@ public class DatabaseCommands {
             System.out.println("GetMyClubs error " + e.getMessage() + sql);
         }
         return rs;
+    }
+
+    public ResultSet getAllUserEmails() {
+        return getUsers();
     }
 }

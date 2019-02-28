@@ -41,6 +41,13 @@
             <version>2.8.0</version>
         </dependency>
 
+        <!-- Json Library -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20180130</version>
+        </dependency>
+
     </dependencies>
 
 
