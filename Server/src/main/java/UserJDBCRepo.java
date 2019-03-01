@@ -1,28 +1,27 @@
-import org.json.JSONArray;
-
+import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserJDBCRepo implements IUsersRepo {
-    private DatabaseCommands dbCmd;
+    private Connection dbConn;
 
-    public UserJDBCRepo(DatabaseCommands cmd ){
-        dbCmd = cmd;
+    public UserJDBCRepo(String dbURL ){
+        this.dbConn = new DatabaseConnection(dbURL).getConnection();
     }
 
     @Override
-    public JSONArray getAllUserEmails() {
-        ResultSet rs = dbCmd.getAllUserEmails();
+    public String getAllUserEmails() {
+        ResultSet rs;
         ArrayList<String> emails = new ArrayList<>();
-        try {
-            while (rs.next()) {
-                emails.add(rs.getString(1));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return new JSONArray(emails);
+//        try {
+//            while (rs.next()) {
+//                emails.add(rs.getString(1));
+//            }
+//        } catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//        }
+        //return new JSONArray(emails);
+        return "emails";
     }
 
     @Override

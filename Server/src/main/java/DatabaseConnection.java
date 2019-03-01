@@ -3,15 +3,16 @@ import java.sql.*;
 public class DatabaseConnection {
     private Connection conn = null;
 
-    DatabaseConnection(){
-        connect();
+    DatabaseConnection(String dbURL){
+        connect(dbURL);
     }
 
-    public void connect(){
+    public void connect(String dbURL){
         try{
             //Create database Connection
             //Change this to the connection for your database
-            String url = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
+            String url = dbURL;
+            //url = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
             conn = DriverManager.getConnection(url);
             System.out.println("Connection established to " + url);
         } catch (SQLException e){

@@ -6,13 +6,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="300460bc-1efc-4bb6-ae12-250d14b9cfd5" name="Default" comment="Uploading files for Club: Club Class, ClubRepo Interface, and ClubJDBCRepo implementation.">
-      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.java" afterDir="false" />
+    <list default="true" id="300460bc-1efc-4bb6-ae12-250d14b9cfd5" name="Default" comment="Created new Class DatabaseConnection to pass database Connection. Added implementation to ClubJDBCRepo as an example of how to use DatabaseConnection">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/Club.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/Club.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/DatabaseCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Prototypes/DatabaseCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/IClubRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/IClubRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/main1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/main1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/IUsersRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/IUsersRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/TestDatabaseCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/Prototypes/TestDatabaseCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/UserJDBCRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/UserJDBCRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-app.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,36 +29,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51176095">
+    <splitter split-orientation="horizontal" split-proportion="0.5548589">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/UserServiceMapImpl.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="460">
-                  <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#282#283#0" expanded="true" />
-                    <element signature="e#329#330#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/SparkRestExample.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="368">
-                  <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Server/src/main/java/Club.java">
               <provider selected="true" editor-type-id="text-editor">
@@ -61,56 +45,40 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Server/src/main/java/Controller.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="168">
+                  <caret line="7" column="79" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="79" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-240">
-                  <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+                <state relative-caret-position="525">
+                  <caret line="90" column="29" lean-forward="true" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#285#291#0" expanded="true" />
-                    <element signature="e#2710#2711#0" expanded="true" />
-                    <element signature="e#2737#2738#0" expanded="true" />
+                    <element signature="e#4180#4181#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.java">
+            <entry file="file://$PROJECT_DIR$/Server/src/main/java/DatabaseConnection.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+                <state relative-caret-position="299">
+                  <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
                   <folding>
-                    <element signature="imports" expanded="true" />
+                    <element signature="e#636#637#0" expanded="true" />
+                    <element signature="e#663#664#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubRepo.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubInterests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="1" selection-start-line="1" selection-end-line="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubUsers.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="1" selection-start-line="1" selection-end-line="1" />
                 </state>
               </provider>
             </entry>
@@ -120,43 +88,27 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/TestDatabaseCommands.java">
+            <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1771">
-                  <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+                <state relative-caret-position="414">
+                  <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#384#385#0" expanded="true" />
+                    <element signature="e#425#426#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Server/src/main/java/DatabaseCommands.java">
+            <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepo.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+                <state relative-caret-position="345">
+                  <caret line="55" column="13" lean-forward="true" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
                   <folding>
-                    <element signature="e#111#112#0" expanded="true" />
-                    <element signature="e#136#137#0" expanded="true" />
-                    <element signature="docComment;method#getUsersFromClub#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getAllClubs#0;class#DatabaseCommands#0" />
-                    <element signature="method#getAllClubs#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getAllClubsNameSearch#0;class#DatabaseCommands#0" />
-                    <element signature="method#getAllClubsNameSearch#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getAllClubsIntSearch#0;class#DatabaseCommands#0" />
-                    <element signature="method#getAllClubsIntSearch#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getMyClubs#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getRecomClubs#0;class#DatabaseCommands#0" />
-                    <element signature="method#getRecomClubs#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getInterests#0;class#DatabaseCommands#0" />
-                    <element signature="method#getInterests#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getMyInterests#0;class#DatabaseCommands#0" />
-                    <element signature="method#getMyInterests#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getClubInterests#0;class#DatabaseCommands#0" />
-                    <element signature="method#getClubInterests#0;class#DatabaseCommands#0" />
-                    <element signature="docComment;method#getUsers#0;class#DatabaseCommands#0" />
-                    <element signature="method#getUsers#0;class#DatabaseCommands#0" />
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#4180#4181#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -170,8 +122,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -204,21 +156,26 @@
         <option value="$PROJECT_DIR$/Server/src/main/java/SparkRestExample.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/IClubUsers.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/IClubInterests.java" />
-        <option value="$PROJECT_DIR$/Server/src/main/java/IClubRepo.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.groovy" />
         <option value="$PROJECT_DIR$/Server/src/main/java/testJDBCCLub.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/Club.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest2.java" />
+        <option value="$PROJECT_DIR$/Server/src/main/main1.iml" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/DatabaseConnection.java" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/UserJDBCRepo.java" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/IUsersRepo.java" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/Controller.java" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/IClubRepo.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepo.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1423" />
-    <option name="y" value="260" />
-    <option name="width" value="1934" />
-    <option name="height" value="702" />
+    <option name="x" value="1672" />
+    <option name="y" value="194" />
+    <option name="width" value="1932" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -234,22 +191,6 @@
             <path>
               <item name="pluclubapp" type="58d84e3e:PackageViewProjectNode" />
               <item name="main1" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="pluclubapp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="main1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="pluclubapp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="main1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -288,20 +229,21 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
             <path>
-              <item name="pluclubapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pluclubapp" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="pluclubapp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="main1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
             <path>
-              <item name="pluclubapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pluclubapp" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pluclubapp" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="main1" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -315,17 +257,17 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550833185626" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551401891791" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="junit.framework.TestCase" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -336,6 +278,9 @@
       <recent name="junit.framework.TestCase" />
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\intellij\pluclubapp\Server\src\main\Prototypes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -350,7 +295,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClubJDBCRepoTest">
+  <component name="RunManager" selected="JUnit.ClubJDBCRepoTest.getClubs">
     <configuration name="SparkRestExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SparkRestExample" />
       <module name="main1" />
@@ -419,8 +364,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClubJDBCRepoTest" />
         <item itemvalue="JUnit.ClubJDBCRepoTest.getClubs" />
+        <item itemvalue="JUnit.ClubJDBCRepoTest" />
         <item itemvalue="Application.testJDBCCLub" />
         <item itemvalue="Application.SparkRestExample" />
         <item itemvalue="Application.TestDatabaseCommands" />
@@ -452,31 +397,17 @@
       <option name="project" value="LOCAL" />
       <updated>1550812461145</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Created new Class DatabaseConnection to pass database Connection. Added implementation to ClubJDBCRepo as an example of how to use DatabaseConnection">
+      <created>1551390605731</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551390605731</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 37m 01s.xml">
-      <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 43m 38s.xml">
-      <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 44m 12s.xml">
-      <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 44m 37s.xml">
-      <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 44m 46s.xml">
-      <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 44m 55s.xml">
-      <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 45m 12s.xml">
-      <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 47m 29s.xml">
       <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
     </history-entry>
@@ -485,6 +416,27 @@
     </history-entry>
     <history-entry file="ClubJDBCRepoTest - 2019.02.22 at 02h 51m 57s.xml">
       <configuration name="ClubJDBCRepoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClubJDBCRepoTest_getClubs - 2019.02.28 at 15h 54m 45s.xml">
+      <configuration name="ClubJDBCRepoTest.getClubs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClubJDBCRepoTest_getClubs - 2019.02.28 at 15h 55m 27s.xml">
+      <configuration name="ClubJDBCRepoTest.getClubs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClubJDBCRepoTest_getClubs - 2019.02.28 at 15h 56m 05s.xml">
+      <configuration name="ClubJDBCRepoTest.getClubs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClubJDBCRepoTest_getClubs - 2019.02.28 at 15h 56m 37s.xml">
+      <configuration name="ClubJDBCRepoTest.getClubs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClubJDBCRepoTest_getClubs - 2019.02.28 at 16h 05m 26s.xml">
+      <configuration name="ClubJDBCRepoTest.getClubs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClubJDBCRepoTest_getClubs - 2019.02.28 at 16h 06m 03s.xml">
+      <configuration name="ClubJDBCRepoTest.getClubs" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClubJDBCRepoTest_getClubs - 2019.02.28 at 16h 06m 23s.xml">
+      <configuration name="ClubJDBCRepoTest.getClubs" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -498,10 +450,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16151386" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.14978679" />
+      <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.16151386" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Designer" order="3" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -511,18 +462,18 @@
       <window_info id="UI Designer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.22967033" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.22967033" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32967034" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32967034" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32899022" />
+      <window_info anchor="bottom" auto_hide="true" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.27701148" />
       <window_info anchor="bottom" id="Logcat" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4989339" weight="0.43406594" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4989339" weight="0.24285714" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4989339" weight="0.32857144" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4989339" weight="0.3275862" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -580,7 +531,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reworking my files for the project" />
     <MESSAGE value="Uploading files for Club: Club Class, ClubRepo Interface, and ClubJDBCRepo implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploading files for Club: Club Class, ClubRepo Interface, and ClubJDBCRepo implementation." />
+    <MESSAGE value="Created new Class DatabaseConnection to pass database Connection. Added implementation to ClubJDBCRepo as an example of how to use DatabaseConnection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new Class DatabaseConnection to pass database Connection. Added implementation to ClubJDBCRepo as an example of how to use DatabaseConnection" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Databases/ClubDatabase.sql">
@@ -594,52 +546,10 @@
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-app.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/StandardResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.0/gson-2.8.0-sources.jar!/com/google/gson/Gson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="578" column="16" selection-start-line="578" selection-start-column="16" selection-end-line="578" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/UserException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -671,6 +581,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.groovy" />
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.9/junit-4.9.jar!/junit/framework/TestSuite.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#2282#2283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/testJDBCCLub.java" />
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest2.java" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/IUserEventsRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/Prototypes/DatabaseCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="52" lean-forward="true" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding>
+            <element signature="e#111#112#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
+            <element signature="e#10328#10329#0" expanded="true" />
+            <element signature="e#10361#10362#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/Prototypes/TestDatabaseCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1591">
+          <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" selection-start-line="29" selection-end-line="29" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/main1.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="125" selection-start-line="27" selection-start-column="125" selection-end-line="27" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubInterests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -678,13 +669,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/SparkRestExample.java">
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/IUsersRepo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="69">
+          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/DatabaseConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding>
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/UserJDBCRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/UserException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -700,34 +739,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/IClubRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.groovy">
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/StatusResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="50" selection-start-column="50" selection-end-column="50" />
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.9/junit-4.9.jar!/junit/framework/TestSuite.class">
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/StandardResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#2282#2283#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/TestDatabaseCommands.java">
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/SparkRestExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1771">
-          <caret line="77" column="40" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
+        <state relative-caret-position="230">
+          <caret line="19" column="72" lean-forward="true" selection-start-line="19" selection-start-column="72" selection-end-line="19" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -741,62 +770,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/testJDBCCLub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#118#124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/DatabaseCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding>
-            <element signature="e#111#112#0" expanded="true" />
-            <element signature="e#136#137#0" expanded="true" />
-            <element signature="docComment;method#getUsersFromClub#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getAllClubs#0;class#DatabaseCommands#0" />
-            <element signature="method#getAllClubs#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getAllClubsNameSearch#0;class#DatabaseCommands#0" />
-            <element signature="method#getAllClubsNameSearch#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getAllClubsIntSearch#0;class#DatabaseCommands#0" />
-            <element signature="method#getAllClubsIntSearch#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getMyClubs#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getRecomClubs#0;class#DatabaseCommands#0" />
-            <element signature="method#getRecomClubs#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getInterests#0;class#DatabaseCommands#0" />
-            <element signature="method#getInterests#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getMyInterests#0;class#DatabaseCommands#0" />
-            <element signature="method#getMyInterests#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getClubInterests#0;class#DatabaseCommands#0" />
-            <element signature="method#getClubInterests#0;class#DatabaseCommands#0" />
-            <element signature="docComment;method#getUsers#0;class#DatabaseCommands#0" />
-            <element signature="method#getUsers#0;class#DatabaseCommands#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="414">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="79" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -805,13 +794,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/ClubJDBCRepo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+        <state relative-caret-position="525">
+          <caret line="90" column="29" lean-forward="true" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#285#291#0" expanded="true" />
-            <element signature="e#2710#2711#0" expanded="true" />
-            <element signature="e#2737#2738#0" expanded="true" />
+            <element signature="e#4180#4181#0" expanded="true" />
           </folding>
         </state>
       </provider>

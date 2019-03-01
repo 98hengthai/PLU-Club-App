@@ -1,27 +1,30 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.sql.*;
+import com.google.gson.Gson;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ClubJDBCRepo implements IClubRepo{
     private Connection conn;
 
     //Constructor + Establish connection
-    public ClubJDBCRepo() { conn = new DatabaseConnection().getConnection(); }
+    public ClubJDBCRepo(String connURL) { conn = new DatabaseConnection(connURL).getConnection(); }
 
     @Override
-    public boolean createClub(Club club) {
+    public boolean createClub(String clubName, String location, String clubEmail, String clubDesc) {
         String command = null;
+        boolean result;
         try{
             Statement stmt = conn.createStatement();
             command = "INSERT INTO Clubs "  +
                     " VALUES ( " +
-                    club.getName() + ", " +
-                    club.getLocation() + ", " +
-                    club.getClubEmail() + ", " +
-                    club.getDescription() + " ) ";
-            stmt.executeQuery(command);
-            return true;
+                    clubName + ", " +
+                    location + ", " +
+                    clubEmail + ", " +
+                    clubDesc + " ) ";
+            result = stmt.execute(command);
+            return result;
         } catch (SQLException e) {
             System.out.println("Error in Create:Club " + e.getMessage());
             return false;
@@ -29,10 +32,12 @@ public class ClubJDBCRepo implements IClubRepo{
     }
 
     @Override
-    public Collection<Club> getClubs() {
-        List<Club> clubs = new ArrayList<Club>();
+    public String getClubs() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
         String command = null;
         ResultSet resultSet = null;
+        Gson gson = new Gson();
 
         try {
             Statement stmt = conn.createStatement();
@@ -47,21 +52,48 @@ public class ClubJDBCRepo implements IClubRepo{
                 c.setLocation(resultSet.getString("location"));
                 c.setClubEmail(resultSet.getString("clubEmail"));
                 c.setDescription(resultSet.getString("description"));
-                clubs.add(c);
+                sb.append( gson.toJson(c) ).append(",\n ");
             }
         } catch (SQLException e) {
             System.out.println("Error in getClubs " + e.getMessage());
         }
-
-        return clubs;
+        sb.deleteCharAt(sb.length() - 3);
+        sb.append("]");
+        return sb.toString();
     }
 
     @Override
-    public Club getClub(String name) { return new Club(); }
+    public String getClub(String name) {
+        StringBuilder sb = new StringBuilder();
+        String command = null;
+        ResultSet rs = null;
+
+        try{
+            Statement stmt = conn.createStatement();
+            command = "SELECT * " +
+                        "FROM Clubs " +
+                        "WHERE Clubs.Name = " + name + " ";
+            rs = stmt.executeQuery(command);
+            sb.append("[");
+            while(rs.next()){
+                Club c = new Club();
+                c.setName(rs.getString("name"));
+                c.setLocation(rs.getString("location"));
+                c.setClubEmail(rs.getString("clubEmail"));
+                c.setDescription(rs.getString("description"));
+                sb.append( new Gson().toJson(c));
+            }
+            sb.append("]");
+        } catch (SQLException e){
+            System.out.println("Error in getClub " + e.getMessage());
+        }
+
+        return sb.toString();
+    }
 
     @Override
-    public Club editClub(Club edit) throws Exception{
-        //TODO: Update the club in the database as well as the HashMap
+    public String editClub(String cName, String cLoc, String cEmail, String cDesc) throws Exception{
+        //TODO: Update the club in the database
 //        try {
 //            if (edit.getName() == null)
 //                throw new Exception("Name cannot be blank");
@@ -87,7 +119,7 @@ public class ClubJDBCRepo implements IClubRepo{
 //        } catch(Exception e){
 //            throw new Exception(e.getMessage());
 //        }
-        return edit;
+        return "";
     }
 
     @Override
