@@ -1,7 +1,4 @@
 import com.google.gson.Gson;
-import spark.Request;
-import spark.Response;
-import spark.Route;
 
 import static spark.Spark.*;
 
@@ -12,6 +9,9 @@ public class SparkRestExample {
 
         //return JSONArray of userEmails
         get("/userEmails", controller.getAllUserEmails());
+
+        //Clubs Commands
+        get("/clubs", controller.getAllClubs());
 
 
 

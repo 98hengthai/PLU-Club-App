@@ -1,5 +1,3 @@
-import java.sql.*;
-
 public class DatabaseCommands {
     private Connection conn = null;
 
