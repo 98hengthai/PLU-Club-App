@@ -1,9 +1,6 @@
 import com.google.gson.Gson;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class ClubJDBCRepo implements IClubRepo{
     private Connection conn;
@@ -39,19 +36,18 @@ public class ClubJDBCRepo implements IClubRepo{
     @Override
     public String getClubs() {
         StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        String command = null;
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         Gson gson = new Gson();
 
         try {
             conn = dbConn.connect();
-            Statement stmt = conn.createStatement();
-            command = "SELECT * " +
-                        "FROM Clubs";
-            resultSet = stmt.executeQuery(command);
+            PreparedStatement stmt = conn.prepareStatement(
+                    "SELECT * " +
+                        "FROM Clubs");
+            resultSet = stmt.executeQuery();
 
             //Add clubsFromDB to list clubs to return
+            sb.append("[");
             while(resultSet.next()){
                 Club c = new Club();
                 c.setName(resultSet.getString("name"));
@@ -60,28 +56,31 @@ public class ClubJDBCRepo implements IClubRepo{
                 c.setDescription(resultSet.getString("description"));
                 sb.append( gson.toJson(c) ).append(",\n ");
             }
+            sb.deleteCharAt(sb.length() - 3);
+            sb.append("]");
+
             conn.close();
         } catch (SQLException e) {
             System.out.println("Error in getClubs " + e.getMessage());
         }
-        sb.deleteCharAt(sb.length() - 3);
-        sb.append("]");
         return sb.toString();
     }
 
     @Override
     public String getClub(String name) {
         StringBuilder sb = new StringBuilder();
-        String command = null;
-        ResultSet rs = null;
+        ResultSet rs;
 
         try{
             conn = dbConn.connect();
-            Statement stmt = conn.createStatement();
-            command = "SELECT * " +
-                        "FROM Clubs " +
-                        "WHERE Clubs.Name = " + name + " ";
-            rs = stmt.executeQuery(command);
+
+            PreparedStatement stmt = conn.prepareStatement(
+                "SELECT * " +
+                    "FROM Clubs " +
+                    "WHERE Clubs.Name = ? ");
+            stmt.setString(1, name);
+            rs = stmt.executeQuery();
+
             sb.append("[");
             while(rs.next()){
                 Club c = new Club();
@@ -97,39 +96,41 @@ public class ClubJDBCRepo implements IClubRepo{
         } catch (SQLException e){
             System.out.println("Error in getClub " + e.getMessage());
         }
-
         return sb.toString();
     }
 
+    //Updates the club based on key cName and uses getClub to return updated data
     @Override
-    public String editClub(String cName, String cLoc, String cEmail, String cDesc) throws Exception{
-        //TODO: Update the club in the database
-//        try {
-//            if (edit.getName() == null)
-//                throw new Exception("Name cannot be blank");
-//
-//            Club toEdit = clubMap.get(edit.getName());
-//
-//            if(toEdit == null)
-//                throw new Exception("Club not found");
-//
-//            if(edit.getLocation() != null) {
-//                toEdit.setLocation(edit.getLocation());
-//            }
-//            if(edit.getClubEmail() != null) {
-//                toEdit.setClubEmail(edit.getClubEmail());
-//            }
-//
-//            if(edit.getDescription() != null) {
-//                toEdit.setDescription(edit.getDescription());
-//            }
-//
-//            return toEdit;
-//
-//        } catch(Exception e){
-//            throw new Exception(e.getMessage());
-//        }
-        return "";
+    public String editClub(String cName, String cLoc, String cEmail, String cDesc){
+        String result = "";
+        try {
+            if (!clubExist(cName)){
+                return "Club Name did not exist";
+            }
+
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                "UPDATE Clubs "+
+                        "SET Location = ? ," +
+                        "ClubEmail = ? ," +
+                        "Description = ? " +
+                        "WHERE Clubs.Name = ?");
+
+            stmt.setString(1, cLoc);
+            stmt.setString(2, cEmail);
+            stmt.setString(3, cDesc);
+            stmt.setString(4, cName);
+
+            stmt.executeUpdate();
+
+            //Return the newly updated file
+            result = getClub(cName);
+
+            conn.close();
+        } catch(Exception e){
+            System.out.println("Error in CLUBJDBCRepo: editClub: " + e.getMessage());
+        }
+        return result;
     }
 
     @Override
@@ -138,5 +139,28 @@ public class ClubJDBCRepo implements IClubRepo{
     }
 
     @Override
-    public boolean clubExist(String name) { return false; }
+    public boolean clubExist(String name) {
+        String command = null;
+        boolean result = false;
+        ResultSet rs = null;
+
+        try{
+            conn = dbConn.connect();
+
+            PreparedStatement stmt = conn.prepareStatement(
+                "SELECT COUNT(1) " +
+                    "FROM Clubs " +
+                    "WHERE Clubs.Name = ? ");
+
+            stmt.setString(1, name);
+            rs = stmt.executeQuery();
+            if(rs.getInt(1) == 1){
+                result = true;
+            }
+            conn.close();
+        } catch(SQLException e){
+            System.out.println("Error in ClubJDBCRepo:ClubExist, " + e.getMessage());
+        }
+        return result;
+    }
 }

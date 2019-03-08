@@ -10,9 +10,6 @@ public class SparkRestExample {
         //return JSONArray of userEmails
         get("/userEmails", controller.getAllUserEmails());
 
-        //Clubs Commands
-        get("/clubs", controller.getAllClubs());
-
 
 
         post("/users", (request, response) -> {

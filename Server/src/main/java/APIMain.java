@@ -9,9 +9,10 @@ public class APIMain {
         get("/userEmails", controller.getAllUserEmails());
 
         //Clubs Commands
-        get("/clubs", controller.getAllClubs());
-        //TODO: Still need help from Wolff on this one
-        //get("/clubs/:name", controller.getClub());
-
+        get("/clubs", controller::getAllClubs);
+        get("/clubs/:name", controller::getClub);
+        post("/clubs",controller::createClub);
+        put("/clubs/:name", controller::updateClub);
+        delete("/clubs/:name", controller::deleteClub);
     }
 }

@@ -26,26 +26,29 @@ public class Controller {
     //////////////////////////////////////////////////////////////
     //          Club Commands                                   //
     //////////////////////////////////////////////////////////////
-    public Route getAllClubs(){
-        String json = clubRepo.getClubs();
-        return new Route(){
-            public Object handle(Request request, Response response) throws Exception {
-                response.type("application/json");
-                return json;
-            }
-        };
+    public String getAllClubs(Request request, Response resp){
+        return clubRepo.getClubs();
     }
 
-//    public Route getClub(Request request){
-//        Club c = new Gson().fromJson(request.body(), Club.class);
-//        return new Route(){
-//            public Object handle(Request request, Response response) throws Exception{
-//                String json = clubRepo.getClub(c.getName());
-//                response.type("application/json");
-//                return json;
-//            }
-//        };
-//    }
+    public String getClub(Request request, Response resp){
+        System.out.println(request.params(":name"));
+        String temp = clubRepo.getClub(request.params(":name"));
+        System.out.println(temp);
+        return temp;
+    }
+
+    public String createClub(Request request, Response resp){
+        System.out.println(request.queryParams("name"));
+        return "";
+    }
+
+    public String updateClub(Request request, Response resp){
+        return "";
+    }
+
+    public String deleteClub(Request request, Response resp){
+        return "";
+    }
 
 
 }

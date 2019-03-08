@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,10 +24,14 @@ public class ClubJDBCRepoTest {
 
     @Test
     public void getClub() {
+        String cInfo = repo.getClub("Capstone Club");
+        System.out.println(cInfo);
     }
 
     @Test
-    public void editClub() {
+    public void editClub() throws Exception {
+        String temp = repo.editClub("Capstone Club", "Somewhere", "this@plu.edu", "A description");
+        System.out.println(temp);
     }
 
     @Test
@@ -35,5 +40,9 @@ public class ClubJDBCRepoTest {
 
     @Test
     public void clubExist() {
+        Assert.assertTrue(repo.clubExist("Capstone Club"));
+        Assert.assertEquals(false, repo.clubExist("Fake Club"));
+        System.out.println("Passed");
+
     }
 }
