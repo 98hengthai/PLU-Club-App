@@ -23,5 +23,29 @@ public class Controller {
     };
     }
 
+    //////////////////////////////////////////////////////////////
+    //          Club Commands                                   //
+    //////////////////////////////////////////////////////////////
+    public Route getAllClubs(){
+        String json = clubRepo.getClubs();
+        return new Route(){
+            public Object handle(Request request, Response response) throws Exception {
+                response.type("application/json");
+                return json;
+            }
+        };
+    }
+
+//    public Route getClub(Request request){
+//        Club c = new Gson().fromJson(request.body(), Club.class);
+//        return new Route(){
+//            public Object handle(Request request, Response response) throws Exception{
+//                String json = clubRepo.getClub(c.getName());
+//                response.type("application/json");
+//                return json;
+//            }
+//        };
+//    }
+
 
 }

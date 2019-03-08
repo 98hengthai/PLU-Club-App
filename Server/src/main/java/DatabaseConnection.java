@@ -2,22 +2,23 @@ import java.sql.*;
 
 public class DatabaseConnection {
     private Connection conn = null;
+    private String databaseURL;
 
     DatabaseConnection(String dbURL){
-        connect(dbURL);
+        databaseURL = dbURL;
     }
 
-    public void connect(String dbURL){
+    public Connection connect(){
         try{
             //Create database Connection
             //Change this to the connection for your database
-            String url = dbURL;
             //url = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
-            conn = DriverManager.getConnection(url);
-            System.out.println("Connection established to " + url);
+            conn = DriverManager.getConnection(databaseURL);
+            System.out.println("Connection established to " + databaseURL);
         } catch (SQLException e){
             System.out.println("Error in connection: " + e.getMessage());
         }
+        return conn;
     }
 
     public Connection getConnection(){

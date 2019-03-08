@@ -7,15 +7,19 @@ import java.sql.Statement;
 
 public class ClubJDBCRepo implements IClubRepo{
     private Connection conn;
+    private DatabaseConnection dbConn;
 
     //Constructor + Establish connection
-    public ClubJDBCRepo(String connURL) { conn = new DatabaseConnection(connURL).getConnection(); }
+    public ClubJDBCRepo(String connURL) {
+        dbConn = new DatabaseConnection(connURL);
+    }
 
     @Override
     public boolean createClub(String clubName, String location, String clubEmail, String clubDesc) {
         String command = null;
         boolean result;
         try{
+            conn = dbConn.connect();
             Statement stmt = conn.createStatement();
             command = "INSERT INTO Clubs "  +
                     " VALUES ( " +
@@ -24,6 +28,7 @@ public class ClubJDBCRepo implements IClubRepo{
                     clubEmail + ", " +
                     clubDesc + " ) ";
             result = stmt.execute(command);
+            conn.close();
             return result;
         } catch (SQLException e) {
             System.out.println("Error in Create:Club " + e.getMessage());
@@ -40,6 +45,7 @@ public class ClubJDBCRepo implements IClubRepo{
         Gson gson = new Gson();
 
         try {
+            conn = dbConn.connect();
             Statement stmt = conn.createStatement();
             command = "SELECT * " +
                         "FROM Clubs";
@@ -54,6 +60,7 @@ public class ClubJDBCRepo implements IClubRepo{
                 c.setDescription(resultSet.getString("description"));
                 sb.append( gson.toJson(c) ).append(",\n ");
             }
+            conn.close();
         } catch (SQLException e) {
             System.out.println("Error in getClubs " + e.getMessage());
         }
@@ -69,6 +76,7 @@ public class ClubJDBCRepo implements IClubRepo{
         ResultSet rs = null;
 
         try{
+            conn = dbConn.connect();
             Statement stmt = conn.createStatement();
             command = "SELECT * " +
                         "FROM Clubs " +
@@ -84,6 +92,8 @@ public class ClubJDBCRepo implements IClubRepo{
                 sb.append( new Gson().toJson(c));
             }
             sb.append("]");
+
+            conn.close();
         } catch (SQLException e){
             System.out.println("Error in getClub " + e.getMessage());
         }
