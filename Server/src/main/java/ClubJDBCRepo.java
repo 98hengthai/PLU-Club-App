@@ -13,20 +13,17 @@ public class ClubJDBCRepo implements IClubRepo{
 
     @Override
     public boolean createClub(String clubName, String location, String clubEmail, String clubDesc) {
-        String command = null;
-        boolean result;
         try{
             conn = dbConn.connect();
-            Statement stmt = conn.createStatement();
-            command = "INSERT INTO Clubs "  +
-                    " VALUES ( " +
-                    clubName + ", " +
-                    location + ", " +
-                    clubEmail + ", " +
-                    clubDesc + " ) ";
-            result = stmt.execute(command);
+            PreparedStatement stmt = conn.prepareStatement(
+            "INSERT INTO Clubs VALUES ( ? , ? , ? , ? )");
+            stmt.setString(1, clubName);
+            stmt.setString(2, location);
+            stmt.setString(3, clubEmail);
+            stmt.setString(4, clubDesc);
+            stmt.execute();
             conn.close();
-            return result;
+            return clubExist(clubName);
         } catch (SQLException e) {
             System.out.println("Error in Create:Club " + e.getMessage());
             return false;
@@ -140,21 +137,20 @@ public class ClubJDBCRepo implements IClubRepo{
 
     @Override
     public boolean clubExist(String name) {
-        String command = null;
         boolean result = false;
-        ResultSet rs = null;
+        ResultSet rs;
 
         try{
             conn = dbConn.connect();
 
             PreparedStatement stmt = conn.prepareStatement(
-                "SELECT COUNT(1) " +
+                "SELECT * " +
                     "FROM Clubs " +
-                    "WHERE Clubs.Name = ? ");
+                    "WHERE Clubs.Name = ?");
 
             stmt.setString(1, name);
             rs = stmt.executeQuery();
-            if(rs.getInt(1) == 1){
+            if(rs.next()){
                 result = true;
             }
             conn.close();

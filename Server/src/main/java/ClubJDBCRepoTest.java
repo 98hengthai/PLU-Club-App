@@ -8,12 +8,14 @@ public class ClubJDBCRepoTest {
     ClubJDBCRepo repo;
     @Before
     public void setUp(){
-        repo = new ClubJDBCRepo("jdbc:sqlite:/D:/SQLServer/ClubDatabase");
+        repo = new ClubJDBCRepo(
+                "jdbc:mysql://localhost:2000/clubs_499_2019");
     }
 
     @Test
     public void createClub() {
-        assertFalse(false);
+        boolean result = repo.createClub("Board Games Club", "Rieke 121", "BoardGames@plu.edu", "We play board games at PLU!");
+        Assert.assertEquals(true, result);
     }
 
     @Test

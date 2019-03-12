@@ -5,7 +5,8 @@ import spark.Route;
 public class Controller {
     private UserJDBCRepo userJDBCRepo;
     private ClubJDBCRepo clubRepo;
-    private final String databaseURL = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
+    private final String databaseURL = "jdbc:mysql://localhost:2000/clubs_499_2019";
+    //"jdbc:sqlite:/D:/SQLServer/ClubDatabase"
 
     public Controller(){
         userJDBCRepo = new UserJDBCRepo(databaseURL);
