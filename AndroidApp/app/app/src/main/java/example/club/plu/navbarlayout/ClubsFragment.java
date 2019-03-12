@@ -24,14 +24,13 @@ public class ClubsFragment extends Fragment {
     private ListView clubsListView;
     private SearchView searchView;
 
-//    clubsArry = new String[]{"AbsoLUTE: Christian Fellowship","Anime Club","Art Club","Chemistry Club","Dance Club","Health Sciences Club","Math Club",
-//            "AbsoLUTE: Christian Fellowship","Anime Club","Art Club","Chemistry Club","Dance Club","Health Sciences Club","Math Club"};
 
 
     public void initializeClubsArray(String[] clubs){
 //       clubsArry = clubs;
         clubsArry = new String[]{"AbsoLUTE: Christian Fellowship","Anime Club","Art Club","Chemistry Club","Dance Club","Health Sciences Club","Math Club",
-                "AbsoLUTE: Christian Fellowship","Anime Club","Art Club","Chemistry Club","Dance Club","Health Sciences Club","Math Club"};
+                "Computer Science Club", "Scandinavian Club", "Trombone Club", "United Students Association", "World of Anycraft"};
+        Arrays.sort(clubsArry);
     }
 
     @Nullable
