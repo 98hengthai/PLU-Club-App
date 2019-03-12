@@ -33,13 +33,14 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import example.club.plu.navbarlayout.Services.MyService;
-import example.club.plu.navbarlayout.utils.NetworkHelper;
+
+//import example.club.plu.navbarlayout.Services.MyService;
+//import example.club.plu.navbarlayout.utils.NetworkHelper;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{//, LoaderManager.LoaderCallbacks<String> {
 
-
+    /********************  Server connection - Delete comment to undo
     private static final String URL = "http://560057.youcanlearnit.net/services/json/itemsfeed.php";
     private TextView tv;
 
@@ -50,23 +51,25 @@ public class MainActivity extends AppCompatActivity
             tv.append(message + "\n");
         }
     };
+
+  */
+
     private DrawerLayout drawer;
     private boolean networkOk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /********************  Server connection - Delete comment to undo
         tv = (TextView) findViewById(R.id.description);
-
-
         LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(mBCR,
                     new IntentFilter(MyService.MY_SERVICE_MESSAGE));
+        */
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         //init drawer
         //The "Open..." and "Close..." are for Hearing Support.
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -78,40 +81,47 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        //set HomeFragment on start up
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new HomeFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
+        }
 
+//        //Button Stuff
+//        final Button button = (Button) findViewById(R.id.button2);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                sendEmail(v);
+//
+//            }
+//        });
+//        final Button but = (Button) findViewById(R.id.button);
+//
+//        but.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                runClickHandler(v);
+//
+//            }
+//        });
 
-
-
-        //Button Stuff
-        final Button button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendEmail(v);
-
-            }
-        });
-        final Button but = (Button) findViewById(R.id.button);
-
-        but.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                runClickHandler(v);
-
-            }
-        });
-
-
+/********************  Server connection - Delete comment to undo
         networkOk = NetworkHelper.hasNetworkAccess(this);
         tv.append("Network ok " + networkOk);
-    }
+ */
 
+    }//onCreate()
+
+/********************  Server connection - Delete comment to undo
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
         LocalBroadcastManager.getInstance(getApplicationContext()).unregisterReceiver(mBCR);
     }
+*/
 
     private void sendEmail(View v) {
 
@@ -121,10 +131,9 @@ public class MainActivity extends AppCompatActivity
             emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Contacting About " + getString(R.string.club_example));
             emailIntent.putExtra(Intent.EXTRA_TEXT, "");
             startActivity(Intent.createChooser(emailIntent, ""));
-
-
-           
     }
+
+    /********************  Server connection - Delete comment to undo
     public void runClickHandler(View view){
         //TextView t = (TextView) findViewById(R.id.description);
 
@@ -138,6 +147,7 @@ public class MainActivity extends AppCompatActivity
         startService(intent);
         startService(intent);
     }
+     */
 
     @Override
     public void onBackPressed() {
@@ -183,8 +193,10 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
                 break;
             case R.id.nav_clubs:
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ClubsFragment()).commit();
+                ClubsFragment clubsFragment = new ClubsFragment();
+                //init the array of all clubs name
+                clubsFragment.initializeClubsArray(new String[0]);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,clubsFragment).commit();
                 break;
             case R.id.nav_events:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventsFragment()).commit();
