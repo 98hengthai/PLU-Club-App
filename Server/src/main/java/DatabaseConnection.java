@@ -11,9 +11,7 @@ public class DatabaseConnection {
     public Connection connect(){
         try{
             //Create database Connection
-            //Change this to the connection for your database
-            //url = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
-            conn = DriverManager.getConnection(databaseURL, "clubuser_499", "changeme");
+            conn = DriverManager.getConnection(databaseURL, References.USERNAME, References.PASSWORD);
             System.out.println("Connection established to " + databaseURL);
         } catch (SQLException e){
             System.out.println("Error in connection: " + e.getMessage());
@@ -27,7 +25,10 @@ public class DatabaseConnection {
 
     public void close(){
         if(conn != null){
-            try{ conn.close(); } catch (SQLException e){
+            try{
+                System.out.println("Closing");
+                conn.close();
+            } catch (SQLException e){
                 System.out.println("Could not close: " + e.getMessage());
             }
         }

@@ -13,6 +13,6 @@ public class APIMain {
         get("/clubs/:name", controller::getClub);
         post("/clubs",controller::createClub);
         put("/clubs/:name", controller::updateClub);
-        delete("/clubs/:name", controller::deleteClub);
+        delete("/clubs/:name/remove", controller::deleteClub);
     }
 }

@@ -5,8 +5,7 @@ import spark.Route;
 public class Controller {
     private UserJDBCRepo userJDBCRepo;
     private ClubJDBCRepo clubRepo;
-    private final String databaseURL = "jdbc:mysql://localhost:2000/clubs_499_2019";
-    //"jdbc:sqlite:/D:/SQLServer/ClubDatabase"
+    private String databaseURL = References.OFF_CAMPUS_DB_URL;
 
     public Controller(){
         userJDBCRepo = new UserJDBCRepo(databaseURL);
@@ -33,9 +32,7 @@ public class Controller {
 
     public String getClub(Request request, Response resp){
         System.out.println(request.params(":name"));
-        String temp = clubRepo.getClub(request.params(":name"));
-        System.out.println(temp);
-        return temp;
+        return clubRepo.getClub(request.params(":name"));
     }
 
     public String createClub(Request request, Response resp){
@@ -44,11 +41,11 @@ public class Controller {
     }
 
     public String updateClub(Request request, Response resp){
-        return "";
+        return "Not yet implemented";
     }
 
     public String deleteClub(Request request, Response resp){
-        return "";
+        return "Not yet implemented";
     }
 
 

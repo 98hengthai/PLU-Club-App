@@ -132,6 +132,19 @@ public class ClubJDBCRepo implements IClubRepo{
 
     @Override
     public boolean deleteClub(String name) {
+
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                "DELETE FROM Clubs " +
+                    "WHERE Clubs.Name = ? ");
+            stmt.setString(1, name);
+            stmt.executeQuery();
+
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("Error in deleteClub " + e.getMessage());
+        }
         return true;
     }
 

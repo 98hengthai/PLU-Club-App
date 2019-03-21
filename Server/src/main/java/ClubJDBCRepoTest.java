@@ -27,7 +27,9 @@ public class ClubJDBCRepoTest {
     @Test
     public void getClub() {
         String cInfo = repo.getClub("Capstone Club");
+        String willFail = repo.getClub("Failed");
         System.out.println(cInfo);
+        System.out.println(willFail);
     }
 
     @Test
@@ -38,6 +40,7 @@ public class ClubJDBCRepoTest {
 
     @Test
     public void deleteClub() {
+        Boolean cInfo = repo.deleteClub("Test");
     }
 
     @Test
