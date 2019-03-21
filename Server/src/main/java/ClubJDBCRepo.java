@@ -1,5 +1,4 @@
 import com.google.gson.Gson;
-
 import java.sql.*;
 
 public class ClubJDBCRepo implements IClubRepo{
@@ -53,10 +52,10 @@ public class ClubJDBCRepo implements IClubRepo{
                 c.setDescription(resultSet.getString("description"));
                 sb.append( gson.toJson(c) ).append(",\n ");
             }
-            sb.deleteCharAt(sb.length() - 3);
+            if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
             sb.append("]");
 
-            conn.close();
+            dbConn.close();
         } catch (SQLException e) {
             System.out.println("Error in getClubs " + e.getMessage());
         }
@@ -89,7 +88,7 @@ public class ClubJDBCRepo implements IClubRepo{
             }
             sb.append("]");
 
-            conn.close();
+            dbConn.close();
         } catch (SQLException e){
             System.out.println("Error in getClub " + e.getMessage());
         }
@@ -123,7 +122,7 @@ public class ClubJDBCRepo implements IClubRepo{
             //Return the newly updated file
             result = getClub(cName);
 
-            conn.close();
+            dbConn.close();
         } catch(Exception e){
             System.out.println("Error in CLUBJDBCRepo: editClub: " + e.getMessage());
         }
@@ -166,7 +165,7 @@ public class ClubJDBCRepo implements IClubRepo{
             if(rs.next()){
                 result = true;
             }
-            conn.close();
+            dbConn.close();
         } catch(SQLException e){
             System.out.println("Error in ClubJDBCRepo:ClubExist, " + e.getMessage());
         }

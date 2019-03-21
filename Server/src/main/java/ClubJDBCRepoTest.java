@@ -9,7 +9,7 @@ public class ClubJDBCRepoTest {
     @Before
     public void setUp(){
         repo = new ClubJDBCRepo(
-                "jdbc:mysql://localhost:2000/clubs_499_2019");
+                References.OFF_CAMPUS_DB_URL);
     }
 
     @Test

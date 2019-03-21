@@ -5,11 +5,13 @@ import spark.Route;
 public class Controller {
     private UserJDBCRepo userJDBCRepo;
     private ClubJDBCRepo clubRepo;
+    private EventJDBCRepo eventRepo;
     private String databaseURL = References.OFF_CAMPUS_DB_URL;
 
     public Controller(){
         userJDBCRepo = new UserJDBCRepo(databaseURL);
         clubRepo = new ClubJDBCRepo(databaseURL);
+        eventRepo = new EventJDBCRepo(databaseURL);
     }
 
     public Route getAllUserEmails(){
@@ -36,17 +38,59 @@ public class Controller {
     }
 
     public String createClub(Request request, Response resp){
+        //TODO: Ask how to best implement this return statement
         System.out.println(request.queryParams("name"));
-        return "";
+        return "Club Created";
     }
 
     public String updateClub(Request request, Response resp){
+        //TODO: How to retrieve data from the request in the API link
         return "Not yet implemented";
     }
 
     public String deleteClub(Request request, Response resp){
+        //TODO: How to best return data
+        clubRepo.deleteClub(request.params(":name"));
+        return "Delete finished";
+    }
+
+    //////////////////////////////////////////////////////////////
+    //                  Event Commands                          //
+    //////////////////////////////////////////////////////////////
+    public String getAllEvents(Request request, Response resp){
+        return eventRepo.getEvents();
+    }
+
+    public String getEventGivenName(Request request, Response resp){
+        return eventRepo.getEventGivenName(request.params(":name"));
+    }
+
+    public String getEventGivenID(Request request, Response resp){
+        return eventRepo.getEventGivenID(request.params(":idNum"));
+    }
+
+    public String getEventGivenClub(Request request, Response resp){
+        return eventRepo.getEventGivenClub(request.params(":cName"));
+    }
+
+    public String createEvent(Request request, Response resp){
+        //TODO
+        return "Not yet Implemented";
+    }
+
+    public String updateEvent(Request request, Response resp){
+        //TODO
         return "Not yet implemented";
     }
 
+    public String deleteEventGivenID(Request request, Response resp){
+        //TODO
+        return "Not yet implemented";
+    }
+
+    public String deleteEventGivenName(Request request, Response resp){
+        //TODO
+        return "Not yet implemented";
+    }
 
 }

@@ -9,7 +9,6 @@ public class Club {
     }
 
     public Club(String name, String location, String clubEmail, String description){
-        super();
         this.name = name;
         this.location = location;
         this.clubEmail = clubEmail;
