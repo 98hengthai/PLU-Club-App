@@ -3,18 +3,19 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-
+    private String isStudent;
 
     //constructors
     public User() {
     }
 
-    public User(String id, String firstName, String lastName, String email) {
+    public User(String id, String firstName, String lastName, String email, String isStudent) {
         super();
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.isStudent = isStudent;
     }
 
     //getters and setters

@@ -12,6 +12,7 @@ public class TestDatabaseCommands {
         ResultSet results = null;
 
         while(!input.equals("q")) {
+            System.out.println("--------------------------------------");
             System.out.println("What SQL command would you like to test?");
             System.out.println("Enter a number to indicate your command.");
             System.out.println("1) GetUsersFromClub( String clubName )");

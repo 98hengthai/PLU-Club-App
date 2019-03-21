@@ -21,4 +21,5 @@
     <string name="title_activity_navigation_bar">NavigationBar</string>
     <string name="club_description">This is an example description. This description does not have any valuable information for anyone, nor does it help this app function in any way. However, it does allow the app to look like it would if there were an informative description.</string>
     <string name="navspinner">NavSpinner</string>
+    <string name="home_fragment">Home Fragment</string>
 </resources>
