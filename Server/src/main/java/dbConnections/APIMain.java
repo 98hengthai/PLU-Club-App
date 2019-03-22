@@ -1,3 +1,5 @@
+package dbConnections;
+
 import static spark.Spark.*;
 
 
@@ -11,11 +13,11 @@ public class APIMain {
         //Clubs Commands
         get("/clubs", controller::getAllClubs);
         get("/clubs/:name", controller::getClub);
-        post("/clubs",controller::createClub);
+        post("/clubs", controller::createClub);
         put("/clubs/:name", controller::updateClub);
         delete("/clubs/:name/remove", controller::deleteClub);
 
-        //Event Commands
+        //entities.Event Commands
         get("/event", controller::getAllEvents);
         get("/event/name/:name", controller::getEventGivenName);
         get("/event/id/:idNum", controller::getEventGivenID);

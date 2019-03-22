@@ -1,3 +1,5 @@
+package entities;
+
 public class Club {
     private String name;
     private String location;
@@ -35,7 +37,7 @@ public class Club {
     public String toString() {
         return new StringBuilder("Name: " + this.getName() +
                 " Location: " + this.getLocation() +
-                " Club Email: " + this.getClubEmail() +
+                " entities.Club Email: " + this.getClubEmail() +
                 " Description: " + this.getDescription()).toString();
     }
 }

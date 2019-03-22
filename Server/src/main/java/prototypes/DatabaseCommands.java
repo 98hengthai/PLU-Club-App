@@ -1,3 +1,7 @@
+package prototypes;
+import java.sql.*;
+
+
 public class DatabaseCommands {
     private Connection conn = null;
 
@@ -14,7 +18,7 @@ public class DatabaseCommands {
             String url = "jdbc:sqlite:/C:/Users/hengt/Documents/GitHub/pluclubapp/Databases/ClubDatabase";
             conn = DriverManager.getConnection(url);
 
-            System.out.println("Connection to SQLite has been established");
+            System.out.println("dbConnections to SQLite has been established");
         } catch (SQLException e) {
             System.out.println("Error in connection to SQLite, " + e.getMessage());
         }
@@ -22,8 +26,8 @@ public class DatabaseCommands {
 
     /**
      * Queries the database for a ResultSet of all users from a given club
-     * @param clubName The Club that users belong to
-     * @return Returns Names of Users from a given Club
+     * @param clubName The entities.Club that users belong to
+     * @return Returns Names of Users from a given entities.Club
      */
     public ResultSet getUsersFromClub(String clubName){
         ResultSet rs = null;
@@ -143,9 +147,9 @@ public class DatabaseCommands {
 
     /**
      * Given a username, return a list of clubs that match that
-     *  User's interests and order it by the number of interests matched
+     *  prototypes.User's interests and order it by the number of interests matched
      * @param userName
-     * @return A ResultSet of club names that match User Interests
+     * @return A ResultSet of club names that match prototypes.User Interests
      */
     public ResultSet getRecomClubs(String userName){
         ResultSet rs = null;

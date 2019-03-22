@@ -1,7 +1,9 @@
+package prototypes.Interfaces;
+
 /**
- * This is the interface for the Event entity in the database talking to the Server API.
+ * This is the interface for the entities.Event entity in the database talking to the Server API.
  * The interface is responsible for creating, deleting, updating, and retrieving information
- *  for Event entities.
+ *  for entities.Event entities.entities.
  *
  *  Created: Jimmy Nguyen on 3/20/2019
  */

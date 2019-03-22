@@ -1,7 +1,13 @@
+package JDBCRepo;
+
+import prototypes.Interfaces.IEventRepo;
 import com.google.gson.Gson;
+import entities.Event;
+import dbConnections.DatabaseConnection;
+
 import java.sql.*;
 
-public class EventJDBCRepo implements IEventRepo{
+public class EventJDBCRepo implements IEventRepo {
     private Connection conn;
     private DatabaseConnection dbConn;
 
@@ -30,7 +36,7 @@ public class EventJDBCRepo implements IEventRepo{
                 e.setLocation(rs.getString("Location"));
                 e.setStart_time((rs.getString("Start_Time")));
                 e.setEnd_time(rs.getString("End_Time"));
-                e.setRepeat(rs.getString("Repeat"));
+                e.setRepeat(rs.getString("Repeating"));
                 e.setClubName(rs.getString("ClubName"));
                 sb.append( gson.toJson(e) ).append(",\n ");
             }
@@ -68,7 +74,7 @@ public class EventJDBCRepo implements IEventRepo{
                 e.setLocation(rs.getString("Location"));
                 e.setStart_time((rs.getString("Start_Time")));
                 e.setEnd_time(rs.getString("End_Time"));
-                e.setRepeat(rs.getString("Repeat"));
+                e.setRepeat(rs.getString("Repeating"));
                 e.setClubName(rs.getString("ClubName"));
                 sb.append( gson.toJson(e) ).append(",\n ");
             }
@@ -106,7 +112,7 @@ public class EventJDBCRepo implements IEventRepo{
                 e.setLocation(rs.getString("Location"));
                 e.setStart_time((rs.getString("Start_Time")));
                 e.setEnd_time(rs.getString("End_Time"));
-                e.setRepeat(rs.getString("Repeat"));
+                e.setRepeat(rs.getString("Repeating"));
                 e.setClubName(rs.getString("ClubName"));
                 sb.append( gson.toJson(e) ).append(",\n ");
             }
@@ -144,7 +150,7 @@ public class EventJDBCRepo implements IEventRepo{
                 e.setLocation(rs.getString("Location"));
                 e.setStart_time((rs.getString("Start_Time")));
                 e.setEnd_time(rs.getString("End_Time"));
-                e.setRepeat(rs.getString("Repeat"));
+                e.setRepeat(rs.getString("Repeating"));
                 e.setClubName(rs.getString("ClubName"));
                 sb.append( gson.toJson(e) ).append(",\n ");
             }
@@ -159,13 +165,67 @@ public class EventJDBCRepo implements IEventRepo{
     }
 
     @Override
+    /**
+     * Returns true if event was created, else returns false
+     *  idNum auto populates so there is no need to pass that integer
+     */
     public boolean createEvent(String idNum, String evName, String loc, String stTime, String endTime, String rep, String cName) {
+        try {
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                "INSERT INTO Event VALUES( ? , ? , ? , ? , ? , ? ");
+            stmt.setString(1, evName);
+            stmt.setString(2, loc);
+            stmt.setString(3, stTime);
+            stmt.setString(4, endTime);
+            stmt.setString(5, rep);
+            stmt.setString(6, cName);
+            stmt.execute();
+            conn.close();
+            return eventExistGivenName(cName);
+        } catch (SQLException e){
+            System.out.println("Error in createEvent " + e.getMessage());
+        }
         return false;
     }
 
     @Override
     public String editEvent(String idNum, String evName, String loc, String stTime, String endTime, String rep, String cName) {
-        return null;
+        String result = "";
+        try {
+            if (!eventExist(idNum)){
+                return "Event did not exist";
+            }
+
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                "UPDATE Event "+
+                        "SET Event_Name = ?, " +
+                            "Location = ?, " +
+                            "Start_Time = ?, " +
+                            "End_Time = ?, " +
+                            "Repeating = ?, " +
+                            "ClubName = ? " +
+                        "WHERE Event.idNumber = ?");
+
+            stmt.setString(1, evName);
+            stmt.setString(2, loc);
+            stmt.setString(3, stTime);
+            stmt.setString(4, endTime);
+            stmt.setString(5, rep);
+            stmt.setString(6, cName);
+            stmt.setString(7, idNum);
+
+            stmt.executeUpdate();
+
+            //Return the newly updated file
+            result = getEventGivenID(idNum);
+
+            dbConn.close();
+        } catch(Exception e){
+            System.out.println("Error in EventJDBCRepo: Edit:  " + e.getMessage());
+        }
+        return result;
     }
 
     @Override
@@ -180,11 +240,51 @@ public class EventJDBCRepo implements IEventRepo{
 
     @Override
     public boolean eventExist(String idNum) {
-        return false;
+        boolean result = false;
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "SELECT * " +
+                    "FROM Event " +
+                    "WHERE Event.idNumber = ?");
+            stmt.setString(1, idNum);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+                result = true;
+            }
+
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("Error in EventJDBCRepo.EventExist: " + e.getMessage());
+        }
+        return result;
     }
 
     @Override
     public boolean eventExistGivenName(String evName) {
-        return false;
+        boolean result = false;
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "SELECT * " +
+                    "FROM Event " +
+                    "WHERE Event.ClubName = ?");
+            stmt.setString(1, evName);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+                result = true;
+            }
+
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("Error in EventJDBCRepo.EventExist: " + e.getMessage());
+        }
+        return result;
     }
 }

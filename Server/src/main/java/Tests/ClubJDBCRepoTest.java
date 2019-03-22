@@ -1,3 +1,7 @@
+package Tests;
+
+import common.References;
+import JDBCRepo.ClubJDBCRepo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +18,7 @@ public class ClubJDBCRepoTest {
 
     @Test
     public void createClub() {
-        boolean result = repo.createClub("Board Games Club", "Rieke 121", "BoardGames@plu.edu", "We play board games at PLU!");
+        boolean result = repo.createClub("Board Games Club2", "Rieke 121", "BoardGames@plu.edu", "We play board games at PLU!");
         Assert.assertEquals(true, result);
     }
 

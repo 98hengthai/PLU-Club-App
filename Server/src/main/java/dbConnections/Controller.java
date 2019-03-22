@@ -1,3 +1,9 @@
+package dbConnections;
+
+import JDBCRepo.ClubJDBCRepo;
+import JDBCRepo.EventJDBCRepo;
+import JDBCRepo.UserJDBCRepo;
+import common.References;
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -26,7 +32,7 @@ public class Controller {
     }
 
     //////////////////////////////////////////////////////////////
-    //          Club Commands                                   //
+    //          entities.Club Commands                                   //
     //////////////////////////////////////////////////////////////
     public String getAllClubs(Request request, Response resp){
         return clubRepo.getClubs();
@@ -38,24 +44,35 @@ public class Controller {
     }
 
     public String createClub(Request request, Response resp){
-        //TODO: Ask how to best implement this return statement
-        System.out.println(request.queryParams("name"));
-        return "Club Created";
+        String name = request.queryParams("name");
+        String loc = request.queryParams("location");
+        String cEmail = request.queryParams("clubEmail");
+        String desc = request.queryParams("description");
+        boolean temp = clubRepo.createClub(name, loc, cEmail, desc);
+        if(temp){
+            return "entities.Club successfully created";
+        }
+        return "entities.Club Created";
     }
 
     public String updateClub(Request request, Response resp){
         //TODO: How to retrieve data from the request in the API link
+        //Return the club information in JSON format
         return "Not yet implemented";
     }
 
     public String deleteClub(Request request, Response resp){
         //TODO: How to best return data
-        clubRepo.deleteClub(request.params(":name"));
-        return "Delete finished";
+        //If club exists, say delete failed
+        boolean temp = clubRepo.deleteClub(request.params(":name"));
+        if(temp) {
+            return "Delete successful";
+        }
+        return "Delete failed";
     }
 
     //////////////////////////////////////////////////////////////
-    //                  Event Commands                          //
+    //                  entities.Event Commands                          //
     //////////////////////////////////////////////////////////////
     public String getAllEvents(Request request, Response resp){
         return eventRepo.getEvents();

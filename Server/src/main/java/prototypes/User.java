@@ -1,3 +1,5 @@
+package prototypes;
+
 public class User {
     private String id;
     private String firstName;

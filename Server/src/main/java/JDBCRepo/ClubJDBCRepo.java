@@ -1,7 +1,13 @@
+package JDBCRepo;
+
+import prototypes.Interfaces.IClubRepo;
+import dbConnections.DatabaseConnection;
 import com.google.gson.Gson;
+import entities.Club;
+
 import java.sql.*;
 
-public class ClubJDBCRepo implements IClubRepo{
+public class ClubJDBCRepo implements IClubRepo {
     private Connection conn;
     private DatabaseConnection dbConn;
 
@@ -139,12 +145,13 @@ public class ClubJDBCRepo implements IClubRepo{
                     "WHERE Clubs.Name = ? ");
             stmt.setString(1, name);
             stmt.executeQuery();
-
             dbConn.close();
+
+            return !clubExist(name);
         } catch (SQLException e){
             System.out.println("Error in deleteClub " + e.getMessage());
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -167,7 +174,7 @@ public class ClubJDBCRepo implements IClubRepo{
             }
             dbConn.close();
         } catch(SQLException e){
-            System.out.println("Error in ClubJDBCRepo:ClubExist, " + e.getMessage());
+            System.out.println("Error in JDBCRepo.ClubJDBCRepo:ClubExist, " + e.getMessage());
         }
         return result;
     }

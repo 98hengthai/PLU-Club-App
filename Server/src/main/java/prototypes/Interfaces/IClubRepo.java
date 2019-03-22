@@ -1,7 +1,9 @@
+package prototypes.Interfaces;
+
 /**
- * This is the interface for the Club Entity in the database talking to the Server API.
+ * This is the interface for the entities.Club Entity in the database talking to the Server API.
  * The interface is responsible for creating, deleting, updating, and retrieving information
- *  for club entities.
+ *  for club entities.entities.
  */
 public interface IClubRepo {
     public boolean createClub(String cName, String cLoc, String cEmail, String cDesc);

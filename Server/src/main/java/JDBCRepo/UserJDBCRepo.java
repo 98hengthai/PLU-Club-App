@@ -1,3 +1,8 @@
+package JDBCRepo;
+
+import prototypes.Interfaces.IUsersRepo;
+import dbConnections.DatabaseConnection;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;

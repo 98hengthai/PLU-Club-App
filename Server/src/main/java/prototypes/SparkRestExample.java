@@ -1,3 +1,5 @@
+package prototypes;
+
 import com.google.gson.Gson;
 
 import static spark.Spark.*;
@@ -5,13 +7,6 @@ import static spark.Spark.*;
 public class SparkRestExample {
     public static void main(String[] args) {
         final UserService userService = new UserServiceMapImpl();
-        Controller controller = new Controller();
-
-        //return JSONArray of userEmails
-        get("/userEmails", controller.getAllUserEmails());
-
-
-
         post("/users", (request, response) -> {
             response.type("application/json");
             User user = new Gson().fromJson(request.body(), User.class);
@@ -41,7 +36,7 @@ public class SparkRestExample {
             if (editedUser != null) {
                 return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, new Gson().toJsonTree(editedUser)));
             } else {
-                return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, new Gson().toJson("User not found or error in edit")));
+                return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, new Gson().toJson("prototypes.User not found or error in edit")));
             }
         });
 
@@ -55,7 +50,7 @@ public class SparkRestExample {
         options("/users/:id", (request, response) -> {
             response.type("application/json");
 
-            return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, (userService.userExist(request.params(":id"))) ? "User exists" : "User does not exists"));
+            return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, (userService.userExist(request.params(":id"))) ? "prototypes.User exists" : "prototypes.User does not exists"));
         });
 
     }

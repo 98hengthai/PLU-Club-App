@@ -1,3 +1,5 @@
+package entities;
+
 public class Event {
     private String idNumber;
     private String name;

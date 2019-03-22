@@ -1,3 +1,5 @@
+package prototypes.Interfaces;
+
 public interface IUsersRepo {
     public String getAllUserEmails();
     public String[] getAllUserInformation();
