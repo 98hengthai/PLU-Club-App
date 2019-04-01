@@ -1,6 +1,6 @@
 package JDBCRepo;
 
-import prototypes.Interfaces.IEventRepo;
+import Interfaces.IEventRepo;
 import com.google.gson.Gson;
 import entities.Event;
 import dbConnections.DatabaseConnection;
@@ -230,11 +230,37 @@ public class EventJDBCRepo implements IEventRepo {
 
     @Override
     public boolean deleteEvent(String idNum) {
+        try {
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                    "DELETE FROM Event " +
+                            "WHERE Event.idNumber = ?");
+            stmt.setString(1, idNum);
+            stmt.executeQuery();
+            dbConn.close();
+
+            return !eventExist(idNum);
+        } catch (SQLException e){
+            System.out.println("error in deleteEvent : " + e.getMessage());
+        }
         return false;
     }
 
     @Override
     public boolean deleteEventGivenName(String evName) {
+        try {
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                    "DELETE FROM Event " +
+                            "WHERE Event.Event_Name= ?");
+            stmt.setString(1, evName);
+            stmt.executeQuery();
+            dbConn.close();
+            //TODO: Create eventExist given EventName
+            return true;
+        } catch (SQLException e){
+            System.out.println("error in deleteEvent : " + e.getMessage());
+        }
         return false;
     }
 

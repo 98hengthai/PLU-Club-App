@@ -1,4 +1,4 @@
-package prototypes.Interfaces;
+package Interfaces;
 
 public interface IClubInterests {
 

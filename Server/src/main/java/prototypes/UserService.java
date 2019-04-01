@@ -1,7 +1,6 @@
 package prototypes;
 
-import prototypes.User;
-import prototypes.UserException;
+import entities.User;
 
 import java.util.Collection;
 

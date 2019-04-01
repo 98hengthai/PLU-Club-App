@@ -1,4 +1,4 @@
-package prototypes.Interfaces;
+package Interfaces;
 
 /**
  * This is the interface for the entities.Event entity in the database talking to the Server API.
