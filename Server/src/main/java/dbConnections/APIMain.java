@@ -36,5 +36,17 @@ public class APIMain {
         get("/interests", controller::getAllInterests);
         post("/interests", controller::createInterests);
         delete("/interests/:name", controller::deleteInterests);
+
+        //ClubInterest Commands
+        get("/clubInterests/:club", controller::getClubInterestsGivenClub);  //Must specify club because no point in having a get for all entities
+        get("/clubInterests/:interest", controller::getClubInterestsGivenInt);
+        post("/clubInterests", controller::createClubInterest);                //Requires club and Interest
+        delete("/clubInterests/:club/:interest", controller::deleteClubInterest);  //Requires both club and interest to delete
+
+        //UserInterest Commands
+        get("/userInterests/:userEmail", controller::getUserInterestsGivenEmail);
+        get("/userInterests/:interest", controller::getUserInterestsGivenInt);
+        post("/userInterests", controller::createUserInterest);                         //Requires User and Interest
+        delete("/userInterests/:userEmail/:interest", controller::deleteUserInterest);  //Requires user and interest
     }
 }

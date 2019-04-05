@@ -121,8 +121,21 @@ public class UserJDBCRepo implements IUsersRepo {
 
     @Override
     public boolean createUser(String email, String name, String gradYear, String studentBool) {
-        //TODO
-        return false;
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                "INSERT INTO Users VALUES( ? , ? , ? , ? )");
+            stmt.setString(1, email);
+            stmt.setString(2, name);
+            stmt.setString(3, gradYear);
+            stmt.setString(4, studentBool);
+            stmt.execute();
+            conn.close();
+            return userExist(email);
+        } catch (SQLException e){
+            System.out.println("Error in createUser: " + e.getMessage());
+            return false;
+        }
     }
 
     @Override
@@ -151,13 +164,47 @@ public class UserJDBCRepo implements IUsersRepo {
 
     @Override
     public boolean userExist(String email) {
-        //TODO
-        return false;
+        boolean result = false;
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+
+            PreparedStatement stmt = conn.prepareStatement(
+                "SELECT * " +
+                    "FROM Users " +
+                    "WHERE Users.Email = ?");
+            stmt.setString(1, email);
+            rs = stmt.executeQuery();
+
+            if(rs.next())
+                result = true;
+        } catch (SQLException e){
+            System.out.println("Error in UserJDBCRepo.userExist: " + e.getMessage());
+        }
+        return result;
     }
 
     @Override
     public boolean userExistGivenName(String name) {
-        //TODO
-        return false;
+        boolean result = false;
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+
+            PreparedStatement stmt = conn.prepareStatement(
+                    "SELECT * " +
+                            "FROM Users " +
+                            "WHERE Users.Name = ?");
+            stmt.setString(1, name);
+            rs = stmt.executeQuery();
+
+            if(rs.next())
+                result = true;
+        } catch (SQLException e){
+            System.out.println("Error in UserJDBCRepo.userExistGivenName: " + e.getMessage());
+        }
+        return result;
     }
 }

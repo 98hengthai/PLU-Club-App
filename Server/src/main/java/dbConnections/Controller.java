@@ -167,4 +167,26 @@ public class Controller {
     public String deleteInterests(Request request, Response resp){
         return "Not yet implemented";
     }
+
+    //////////////////////////////////////////////////////////////
+    //                   ClubInterests Commands                 //
+    //////////////////////////////////////////////////////////////
+    public String getClubInterestsGivenClub(Request request, Response resp){ return "Not yet implemented";}
+
+    public String getClubInterestsGivenInt(Request request, Response resp){ return "Not yet implemented";}
+
+    public String createClubInterest(Request request, Response resp){ return "Not yet implemented";}
+
+    public String deleteClubInterest(Request request, Response resp){ return "Not yet implemented";}
+
+    //////////////////////////////////////////////////////////////
+    //                   UserInterests Commands                 //
+    //////////////////////////////////////////////////////////////
+    public String getUserInterestsGivenEmail(Request request, Response resp){ return "Not yet implemented";}
+
+    public String getUserInterestsGivenInt(Request request, Response resp){ return "Not yet implemented";}
+
+    public String createUserInterest(Request request, Response resp){ return "Not yet implemented";}
+
+    public String deleteUserInterest(Request request, Response resp){ return "Not yet implemented";}
 }
