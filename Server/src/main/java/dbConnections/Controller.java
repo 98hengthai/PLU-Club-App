@@ -3,6 +3,8 @@ package dbConnections;
 import JDBCRepo.ClubJDBCRepo;
 import JDBCRepo.EventJDBCRepo;
 import JDBCRepo.UserJDBCRepo;
+import JDBCRepo.InterestJDBCRepo;
+import JDBCRepo.ClubInterestJDBCRepo;
 import common.References;
 import spark.Request;
 import spark.Response;
@@ -14,12 +16,16 @@ public class Controller {
     private UserJDBCRepo userRepo;
     private ClubJDBCRepo clubRepo;
     private EventJDBCRepo eventRepo;
+    private InterestJDBCRepo intRepo;
+    private ClubInterestJDBCRepo clubIntRepo;
     private String databaseURL = References.OFF_CAMPUS_DB_URL;
 
     public Controller(){
         userRepo = new UserJDBCRepo(databaseURL);
         clubRepo = new ClubJDBCRepo(databaseURL);
         eventRepo = new EventJDBCRepo(databaseURL);
+        intRepo = new InterestJDBCRepo(databaseURL);
+        clubIntRepo = new ClubInterestJDBCRepo(databaseURL);
     }
 
     //////////////////////////////////////////////////////////////
@@ -166,15 +172,19 @@ public class Controller {
     //                   Interests Commands                     //
     //////////////////////////////////////////////////////////////
     public String getAllInterests(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        return intRepo.getInterests();
     }
 
     public String createInterests(Request request, Response resp){
+        //TODO: Get info from body
         return References.ERROR_CODE_503;
     }
 
     public String deleteInterests(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        boolean temp = intRepo.deleteInterest(request.params(":name"));
+        if(temp)
+            return References.API_CODE_200;
+        return References.ERROR_403_DELETE;
     }
 
     //////////////////////////////////////////////////////////////
