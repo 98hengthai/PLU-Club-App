@@ -1,10 +1,10 @@
 package JDBCRepo;
 
 import Interfaces.IUsersRepo;
+import common.References;
 import dbConnections.DatabaseConnection;
 import com.google.gson.Gson;
 import entities.User;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -140,25 +140,105 @@ public class UserJDBCRepo implements IUsersRepo {
 
     @Override
     public String editUser(String email, String name, String gradYear, String studentBool) {
-        //TODO
-        return null;
+        String result = "";
+        try{
+            if(!userExist(email)){
+                return References.ERROR_403_EDIT;
+            }
+
+            conn = dbConn.connect();
+            //Given Email, update the User's attributes
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "UPDATE User " +
+                    "SET Email = ?, " +
+                        "Name = ?, " +
+                        "GraduationYear= ?, " +
+                        "StudentBool = ? " +
+                    "WHERE User.Email = ?");
+
+            stmt.setString(1, email);
+            stmt.setString(2, name);
+            stmt.setString(3, gradYear);
+            stmt.setString(4, studentBool);
+            stmt.setString(5, email);
+            stmt.executeUpdate();
+
+            //Retrieve data is found
+            result = getUserGivenEmail(email);
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("EditUser Failed " + e.getMessage());
+        }
+        return result;
     }
 
     @Override
     public String editUserGivenName(String email, String name, String gradYear, String studentBool) {
-        //Never Used
-        return null;
+        String result = "";
+        try{
+            if(!userExist(email)){
+                return References.ERROR_403_EDIT;
+            }
+
+            conn = dbConn.connect();
+            //Given Email, update the User's attributes
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "UPDATE User " +
+                    "SET Email = ?, " +
+                    "Name = ?, " +
+                    "GraduationYear= ?, " +
+                    "StudentBool = ? " +
+                    "WHERE User.Name = ?");
+
+            stmt.setString(1, email);
+            stmt.setString(2, name);
+            stmt.setString(3, gradYear);
+            stmt.setString(4, studentBool);
+            stmt.setString(5, name);
+            stmt.executeUpdate();
+
+            //Retrieve data is found
+            result = getUserGivenEmail(email);
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("EditUser Failed " + e.getMessage());
+        }
+        return result;
     }
 
     @Override
     public boolean deleteUser(String email) {
-        //TODO
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "DELETE FROM User " +
+                    "WHERE User.Email = ?");
+            stmt.setString(1, email);
+            stmt.executeQuery();
+            dbConn.close();
+
+            return !userExist(email);
+        } catch (SQLException e){
+            System.out.println("Error in deleteUser: " + e.getMessage());
+        }
         return false;
     }
 
     @Override
     public boolean deleteUserGivenName(String name) {
-        //TODO
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "DELETE FROM User " +
+                    "WHERE User.Name = ?");
+            stmt.setString(1, name);
+            stmt.executeQuery();
+            dbConn.close();
+
+            return !userExistGivenName(name);
+        } catch (SQLException e){
+            System.out.println("Error in deleteUser: " + e.getMessage());
+        }
         return false;
     }
 

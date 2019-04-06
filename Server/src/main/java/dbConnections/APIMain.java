@@ -29,6 +29,7 @@ public class APIMain {
         get("/user/:name", controller::getUserGivenName);
         post("/user", controller::createUser);
         put("/user", controller::updateUser);
+        put("/user/name", controller::updateUserGivenName);
         delete("/user/email/:email", controller::deleteUser);
         delete("/user/name/:name", controller::deleteUserGivenName);
 

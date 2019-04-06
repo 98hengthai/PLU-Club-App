@@ -8,6 +8,8 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
+import java.sql.Ref;
+
 public class Controller {
     private UserJDBCRepo userRepo;
     private ClubJDBCRepo clubRepo;
@@ -40,9 +42,9 @@ public class Controller {
         String desc = request.queryParams("description");
         boolean temp = clubRepo.createClub(name, loc, cEmail, desc);
         if(temp){   //Return a status code
-            return "Club successfully created";
+            return References.API_CODE_201;
         }
-        return "Club Created";
+        return References.ERROR_403_CREATE;
     }
 
     public String updateClub(Request request, Response resp){
@@ -52,13 +54,12 @@ public class Controller {
     }
 
     public String deleteClub(Request request, Response resp){
-        //TODO: Return using Status Code
         //If club exists, say delete failed
         boolean temp = clubRepo.deleteClub(request.params(":name"));
         if(temp) {
-            return "Delete successful";
+            return References.API_CODE_200;
         }
-        return "Delete failed";
+        return References.ERROR_403_DELETE;
     }
 
     //////////////////////////////////////////////////////////////
@@ -90,10 +91,9 @@ public class Controller {
         String rep = request.queryParams("repeat");
         String cName = request.queryParams("clubName");
         boolean temp = eventRepo.createEvent(id, evName, loc, stTime, endTime, rep, cName);
-        if(temp){   //TODO: Return a status code
-            return "Club successfully created";
-        }
-        return "Club Created";
+        if(temp)
+            return References.API_CODE_201;
+        return References.ERROR_403_CREATE;
     }
 
     public String updateEvent(Request request, Response resp){
@@ -102,24 +102,21 @@ public class Controller {
     }
 
     public String deleteEventGivenID(Request request, Response resp){
-        //TODO
-        //TODO: Return using Status Code
         //If club exists, say delete failed
         boolean temp = eventRepo.deleteEvent(request.params(":idNumber"));
         if(temp) {
-            return "Delete successful";
+            return References.API_CODE_200;
         }
-        return "Delete failed";
+        return References.ERROR_403_DELETE;
     }
 
     public String deleteEventGivenName(Request request, Response resp){
-        //TODO: Return using Status Code
         //If club exists, say delete failed
         boolean temp = eventRepo.deleteEventGivenName(request.params(":name"));
         if(temp) {
-            return "Delete successful";
+            return References.API_CODE_200;
         }
-        return "Delete failed";
+        return References.ERROR_403_DELETE;
     }
 
     //////////////////////////////////////////////////////////////
@@ -138,55 +135,67 @@ public class Controller {
     }
 
     public String createUser(Request request, Response resp){
-        return "Not yet implemented";
+        //TODO: Get parameters using body
+        return References.ERROR_CODE_503;
     }
 
     public String updateUser(Request request, Response resp){
-        return "Not yet implemented";
+        //TODO
+        return References.ERROR_CODE_503;
     }
 
+    public String updateUserGivenName(Request request, Response resp){
+        //TODO
+        return References.ERROR_CODE_503;}
+
     public String deleteUser(Request request, Response resp){
-        return "Not yet implemented";
+        boolean temp = userRepo.deleteUser(request.params(":email"));
+        if(temp)
+            return References.API_CODE_200;
+        return References.ERROR_403_DELETE;
     }
 
     public String deleteUserGivenName(Request request, Response resp){
-        return "Not yet implemented";
+        boolean temp = userRepo.deleteUser(request.params(":name"));
+        if(temp)
+            return References.API_CODE_200;
+        return References.ERROR_403_DELETE;
     }
 
     //////////////////////////////////////////////////////////////
     //                   Interests Commands                     //
     //////////////////////////////////////////////////////////////
     public String getAllInterests(Request request, Response resp){
-        return "Not yet implemented";
+        return References.ERROR_CODE_503;
     }
 
     public String createInterests(Request request, Response resp){
-        return "Not yet implemented";
+        return References.ERROR_CODE_503;
     }
 
     public String deleteInterests(Request request, Response resp){
-        return "Not yet implemented";
+        return References.ERROR_CODE_503;
     }
 
     //////////////////////////////////////////////////////////////
     //                   ClubInterests Commands                 //
     //////////////////////////////////////////////////////////////
-    public String getClubInterestsGivenClub(Request request, Response resp){ return "Not yet implemented";}
+    public String getClubInterestsGivenClub(Request request, Response resp){ return References.ERROR_CODE_503;}
 
-    public String getClubInterestsGivenInt(Request request, Response resp){ return "Not yet implemented";}
+    public String getClubInterestsGivenInt(Request request, Response resp){ return References.ERROR_CODE_503;}
 
-    public String createClubInterest(Request request, Response resp){ return "Not yet implemented";}
+    public String createClubInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
 
-    public String deleteClubInterest(Request request, Response resp){ return "Not yet implemented";}
+    public String deleteClubInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
 
     //////////////////////////////////////////////////////////////
     //                   UserInterests Commands                 //
     //////////////////////////////////////////////////////////////
-    public String getUserInterestsGivenEmail(Request request, Response resp){ return "Not yet implemented";}
+    public String getUserInterestsGivenEmail(Request request, Response resp){ return References.ERROR_CODE_503;}
 
-    public String getUserInterestsGivenInt(Request request, Response resp){ return "Not yet implemented";}
+    public String getUserInterestsGivenInt(Request request, Response resp){ return References.ERROR_CODE_503;}
 
-    public String createUserInterest(Request request, Response resp){ return "Not yet implemented";}
+    public String createUserInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
 
-    public String deleteUserInterest(Request request, Response resp){ return "Not yet implemented";}
+    public String deleteUserInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
 }
