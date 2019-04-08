@@ -26,7 +26,7 @@ public class UserJDBCRepo implements IUsersRepo {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
-                            "FROM User");
+                            "FROM Users");
             rs = stmt.executeQuery();
 
             //Add all Users to list
@@ -59,8 +59,8 @@ public class UserJDBCRepo implements IUsersRepo {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
-                            "FROM User " +
-                            "WHERE User.Email = ?");
+                            "FROM Users " +
+                            "WHERE Users.Email = ?");
             stmt.setString(1, email);
             rs = stmt.executeQuery();
 
@@ -94,8 +94,8 @@ public class UserJDBCRepo implements IUsersRepo {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
-                            "FROM User " +
-                            "WHERE User.Name = ?");
+                            "FROM Users " +
+                            "WHERE Users.Name = ?");
             stmt.setString(1, name);
             rs = stmt.executeQuery();
 
@@ -149,12 +149,12 @@ public class UserJDBCRepo implements IUsersRepo {
             conn = dbConn.connect();
             //Given Email, update the User's attributes
             PreparedStatement stmt = conn.prepareStatement("" +
-                    "UPDATE User " +
+                    "UPDATE Users " +
                     "SET Email = ?, " +
                         "Name = ?, " +
                         "GraduationYear= ?, " +
                         "StudentBool = ? " +
-                    "WHERE User.Email = ?");
+                    "WHERE Users.Email = ?");
 
             stmt.setString(1, email);
             stmt.setString(2, name);
@@ -183,12 +183,12 @@ public class UserJDBCRepo implements IUsersRepo {
             conn = dbConn.connect();
             //Given Email, update the User's attributes
             PreparedStatement stmt = conn.prepareStatement("" +
-                    "UPDATE User " +
+                    "UPDATE Users " +
                     "SET Email = ?, " +
                     "Name = ?, " +
                     "GraduationYear= ?, " +
                     "StudentBool = ? " +
-                    "WHERE User.Name = ?");
+                    "WHERE Users.Name = ?");
 
             stmt.setString(1, email);
             stmt.setString(2, name);
@@ -211,8 +211,8 @@ public class UserJDBCRepo implements IUsersRepo {
         try{
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement("" +
-                    "DELETE FROM User " +
-                    "WHERE User.Email = ?");
+                    "DELETE FROM Users " +
+                    "WHERE Users.Email = ?");
             stmt.setString(1, email);
             stmt.executeQuery();
             dbConn.close();
@@ -229,8 +229,8 @@ public class UserJDBCRepo implements IUsersRepo {
         try{
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement("" +
-                    "DELETE FROM User " +
-                    "WHERE User.Name = ?");
+                    "DELETE FROM Users " +
+                    "WHERE Users.Name = ?");
             stmt.setString(1, name);
             stmt.executeQuery();
             dbConn.close();
