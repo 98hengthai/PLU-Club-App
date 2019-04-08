@@ -6,4 +6,5 @@ public interface IClubInterestsRepo {
     String getClubInterestsGivenInterest(String interestName);
     boolean createClubInterest(String clubName, String interestName);
     boolean deleteClubInterest(String clubName, String interestName);
+    boolean clubInterestExist(String clubName, String interestName);
 }

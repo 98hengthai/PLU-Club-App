@@ -1,10 +1,6 @@
 package dbConnections;
 
-import JDBCRepo.ClubJDBCRepo;
-import JDBCRepo.EventJDBCRepo;
-import JDBCRepo.UserJDBCRepo;
-import JDBCRepo.InterestJDBCRepo;
-import JDBCRepo.ClubInterestJDBCRepo;
+import JDBCRepo.*;
 import common.References;
 import spark.Request;
 import spark.Response;
@@ -18,6 +14,7 @@ public class Controller {
     private EventJDBCRepo eventRepo;
     private InterestJDBCRepo intRepo;
     private ClubInterestJDBCRepo clubIntRepo;
+    private UserInterestJDBCRepo userIntRepo;
     private String databaseURL = References.OFF_CAMPUS_DB_URL;
 
     public Controller(){
@@ -26,6 +23,7 @@ public class Controller {
         eventRepo = new EventJDBCRepo(databaseURL);
         intRepo = new InterestJDBCRepo(databaseURL);
         clubIntRepo = new ClubInterestJDBCRepo(databaseURL);
+        userIntRepo = new UserInterestJDBCRepo(databaseURL);
     }
 
     //////////////////////////////////////////////////////////////
@@ -142,6 +140,8 @@ public class Controller {
 
     public String createUser(Request request, Response resp){
         //TODO: Get parameters using body
+        //TODO: Ask Wolff which parameter usage is best way to interpret data
+        System.out.println(request.body());
         return References.ERROR_CODE_503;
     }
 
@@ -190,22 +190,44 @@ public class Controller {
     //////////////////////////////////////////////////////////////
     //                   ClubInterests Commands                 //
     //////////////////////////////////////////////////////////////
-    public String getClubInterestsGivenClub(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String getAllClubInterests(Request request, Response resp){
+        return clubIntRepo.getAllClubInterests();
+    }
+    public String getClubInterestsGivenClub(Request request, Response resp){
+        return clubIntRepo.getClubInterestsGivenClub(request.params(":club"));
+    }
 
-    public String getClubInterestsGivenInt(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String getClubInterestsGivenInt(Request request, Response resp){
+        return clubIntRepo.getClubInterestsGivenInterest(request.params(":interest"));
+    }
 
-    public String createClubInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String createClubInterest(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
 
-    public String deleteClubInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String deleteClubInterest(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
 
     //////////////////////////////////////////////////////////////
     //                   UserInterests Commands                 //
     //////////////////////////////////////////////////////////////
-    public String getUserInterestsGivenEmail(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String getAllUserInterests(Request request, Response resp){
+        return userIntRepo.getAllUserInterests();
+    }
+    public String getUserInterestsGivenEmail(Request request, Response resp){
+        return userIntRepo.getUserInterestsGivenUser(request.params(":userEmail"));
+    }
 
-    public String getUserInterestsGivenInt(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String getUserInterestsGivenInt(Request request, Response resp){
+        return userIntRepo.getUserInterestsGivenInterest(request.params(":interest"));
+    }
 
-    public String createUserInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String createUserInterest(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
 
-    public String deleteUserInterest(Request request, Response resp){ return References.ERROR_CODE_503;}
+    public String deleteUserInterest(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
 }

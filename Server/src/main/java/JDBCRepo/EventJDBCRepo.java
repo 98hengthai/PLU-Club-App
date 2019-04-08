@@ -173,7 +173,7 @@ public class EventJDBCRepo implements IEventRepo {
         try {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
-                "INSERT INTO Event VALUES( ? , ? , ? , ? , ? , ? ");
+                "INSERT INTO Event VALUES( ? , ? , ? , ? , ? , ? )");
             stmt.setString(1, evName);
             stmt.setString(2, loc);
             stmt.setString(3, stTime);
