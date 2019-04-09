@@ -128,7 +128,7 @@ public class UserJDBCRepo implements IUsersRepo {
             stmt.setString(1, email);
             stmt.setString(2, name);
             stmt.setString(3, gradYear);
-            stmt.setString(4, studentBool);
+            stmt.setInt(4, Integer.parseInt(studentBool));
             stmt.execute();
             conn.close();
             return userExist(email);

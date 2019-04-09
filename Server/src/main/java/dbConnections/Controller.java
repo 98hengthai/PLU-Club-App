@@ -15,7 +15,7 @@ public class Controller {
     private InterestJDBCRepo intRepo;
     private ClubInterestJDBCRepo clubIntRepo;
     private UserInterestJDBCRepo userIntRepo;
-    private String databaseURL = References.OFF_CAMPUS_DB_URL;
+    private String databaseURL = References.ON_CAMPUS_DB_URL;
 
     public Controller(){
         userRepo = new UserJDBCRepo(databaseURL);
@@ -142,7 +142,18 @@ public class Controller {
         //TODO: Get parameters using body
         //TODO: Ask Wolff which parameter usage is best way to interpret data
         System.out.println(request.body());
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String name = strTemp[0].split("=")[1];
+        String email = strTemp[1].split("=")[1];
+        String gradYear = strTemp[2].split("=")[1];
+        String isStudent = strTemp[3].split("=")[1];
+        System.out.printf("%s, %s, %s, %s", name, email, gradYear, isStudent);
+
+        boolean temp = userRepo.createUser(email, name, gradYear, isStudent);
+        if(temp)
+            return References.API_CODE_201;
+        else
+            return request.body();
     }
 
     public String updateUser(Request request, Response resp){
