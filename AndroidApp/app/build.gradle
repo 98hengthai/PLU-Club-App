@@ -7,7 +7,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.2'
+        //Note: Use this version 3.2.1 to avoid R.layout red underline
+        classpath 'com.android.tools.build:gradle:3.2.1'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -19,9 +20,14 @@ allprojects {
     repositories {
         google()
         jcenter()
+        //added to support recycleview
+        maven {
+            url "https://maven.google.com"
+        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+

@@ -4,6 +4,15 @@
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="160dp"
+        android:layout_height="63dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="129dp"
+        android:text="Button" />
+
     <!--
     layout_marginTop - idk how to remove the main tool bar yet.
     -->
