@@ -10,6 +10,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Maven: org.json:json:20180130" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20180130" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.mariadb.jdbc:mariadb-java-client:1.1.7" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.jna:jna:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.jna:jna:platform:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.sparkjava:spark-core:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.13" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.3.6.v20151106" level="project" />
@@ -32,5 +36,7 @@
     <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:1.1.7" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.jna:jna:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: net.java.dev.jna:jna:platform:3.3.0" level="project" />
+    <orderEntry type="library" exported="" name="Maven: mysql:mysql-connector-java:8.0.15" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
   </component>
 </module>

@@ -26,16 +26,6 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-security:9.3.6.v20151106" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.3.6.v20151106" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-servlet:9.3.6.v20151106" level="project" />
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://D:/SQLServer/sqlite-jdbc-3.23.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" name="org.jetbrains.kotlin:kotlin-test-junit5:1.3.21" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit3">
         <CLASSES>
@@ -46,7 +36,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.15" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
@@ -57,7 +46,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="mysql:mysql-connector-java:8.0.15" level="project" />
-    <orderEntry type="library" name="mariadb-java-client-2.4.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.mariadb.jdbc:mariadb-java-client:1.1.7" level="project" />
+    <orderEntry type="library" exported="" name="Maven: mysql:mysql-connector-java:8.0.15" level="project" />
   </component>
 </module>

@@ -12,7 +12,7 @@ public class Controller {
     private UserJDBCRepo userRepo;
     private ClubJDBCRepo clubRepo;
     private EventJDBCRepo eventRepo;
-    private String databaseURL = References.OFF_CAMPUS_DB_URL;
+    private String databaseURL = References.ON_CAMPUS_DB_URL;
 
     public Controller(){
         userRepo = new UserJDBCRepo(databaseURL);
