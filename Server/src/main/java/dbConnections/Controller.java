@@ -187,8 +187,14 @@ public class Controller {
     }
 
     public String createInterests(Request request, Response resp){
-        //TODO: Get info from body
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String interest = strTemp[0].split("=")[1];
+
+        boolean createSuccess = intRepo.createInterest(interest);
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE + " " + request.body();
     }
 
     public String deleteInterests(Request request, Response resp){
@@ -213,7 +219,16 @@ public class Controller {
     }
 
     public String createClubInterest(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String intName = strTemp[0].split("=")[1];
+        String clubName = strTemp[1].split("=")[1];
+
+        boolean createSuccess = clubIntRepo.createClubInterest(intName, clubName);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
     }
 
     public String deleteClubInterest(Request request, Response resp){
@@ -235,7 +250,16 @@ public class Controller {
     }
 
     public String createUserInterest(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String userEmail = strTemp[0].split("=")[1];
+        String intName = strTemp[1].split("=")[1];
+
+        boolean createSuccess = userIntRepo.createUserInterest(userEmail, intName);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
     }
 
     public String deleteUserInterest(Request request, Response resp){
