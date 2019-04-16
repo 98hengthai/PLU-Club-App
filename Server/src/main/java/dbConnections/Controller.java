@@ -39,11 +39,12 @@ public class Controller {
     }
 
     public String createClub(Request request, Response resp){
-        //Encode as body instead of into URL
-        String name = request.queryParams("name");
-        String loc = request.queryParams("location");
-        String cEmail = request.queryParams("clubEmail");
-        String desc = request.queryParams("description");
+        //TODO: Beautify the split process
+        String[] strTemp = request.body().split("&");
+        String name = strTemp[0].split("=")[1];
+        String loc = strTemp[0].split("=")[1];
+        String cEmail = strTemp[0].split("=")[1];
+        String desc = strTemp[0].split("=")[1];
         boolean temp = clubRepo.createClub(name, loc, cEmail, desc);
         if(temp){   //Return a status code
             return References.API_CODE_201;
@@ -86,18 +87,19 @@ public class Controller {
     }
 
     public String createEvent(Request request, Response resp){
-        //TODO: Encode as body instead of into URL
-        String id = request.queryParams("idNum");
-        String evName = request.queryParams("evName");
-        String loc = request.queryParams("location");
-        String stTime = request.queryParams("stTime");
-        String endTime = request.queryParams("endTime");
-        String rep = request.queryParams("repeat");
-        String cName = request.queryParams("clubName");
+        String[] strTemp = request.body().split("&");
+        String id = strTemp[0].split("=")[1];
+        String evName = strTemp[1].split("=")[1];
+        String loc = strTemp[2].split("=")[1];
+        String stTime = strTemp[3].split("=")[1];
+        String endTime = strTemp[4].split("=")[1];
+        String rep = strTemp[5].split("=")[1];
+        String cName = strTemp[6].split("=")[1];
+        System.out.printf("%s, %s, %s, %s, %s, %s, %s", id, evName, loc, stTime, endTime, rep ,cName);
         boolean temp = eventRepo.createEvent(id, evName, loc, stTime, endTime, rep, cName);
         if(temp)
             return References.API_CODE_201;
-        return References.ERROR_403_CREATE;
+        return References.ERROR_403_CREATE + " " + request.body();
     }
 
     public String updateEvent(Request request, Response resp){
@@ -139,21 +141,19 @@ public class Controller {
     }
 
     public String createUser(Request request, Response resp){
-        //TODO: Get parameters using body
-        //TODO: Ask Wolff which parameter usage is best way to interpret data
         System.out.println(request.body());
         String[] strTemp = request.body().split("&");
-        String name = strTemp[0].split("=")[1];
-        String email = strTemp[1].split("=")[1];
+        String email = strTemp[0].split("=")[1];
+        String name = strTemp[1].split("=")[1];
         String gradYear = strTemp[2].split("=")[1];
         String isStudent = strTemp[3].split("=")[1];
-        System.out.printf("%s, %s, %s, %s", name, email, gradYear, isStudent);
+        System.out.printf("%s, %s, %s, %s", email, name, gradYear, isStudent);
 
         boolean temp = userRepo.createUser(email, name, gradYear, isStudent);
         if(temp)
             return References.API_CODE_201;
         else
-            return request.body();
+            return References.ERROR_403_CREATE + " " + request.body();
     }
 
     public String updateUser(Request request, Response resp){
@@ -187,8 +187,14 @@ public class Controller {
     }
 
     public String createInterests(Request request, Response resp){
-        //TODO: Get info from body
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String interest = strTemp[0].split("=")[1];
+
+        boolean createSuccess = intRepo.createInterest(interest);
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE + " " + request.body();
     }
 
     public String deleteInterests(Request request, Response resp){
@@ -213,7 +219,16 @@ public class Controller {
     }
 
     public String createClubInterest(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String intName = strTemp[0].split("=")[1];
+        String clubName = strTemp[1].split("=")[1];
+
+        boolean createSuccess = clubIntRepo.createClubInterest(intName, clubName);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
     }
 
     public String deleteClubInterest(Request request, Response resp){
@@ -235,7 +250,16 @@ public class Controller {
     }
 
     public String createUserInterest(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String userEmail = strTemp[0].split("=")[1];
+        String intName = strTemp[1].split("=")[1];
+
+        boolean createSuccess = userIntRepo.createUserInterest(userEmail, intName);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
     }
 
     public String deleteUserInterest(Request request, Response resp){

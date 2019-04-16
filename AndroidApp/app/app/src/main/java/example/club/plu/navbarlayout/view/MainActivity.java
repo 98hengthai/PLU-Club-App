@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_clubs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MainClubFragment()).commit();
+                //init the array of all clubs name
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ClubsFragment()).commit();
                 break;
             case R.id.nav_events:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventsFragment()).commit();

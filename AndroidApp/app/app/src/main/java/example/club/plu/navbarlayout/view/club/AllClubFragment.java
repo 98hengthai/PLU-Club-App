@@ -38,7 +38,12 @@ public class AllClubFragment extends Fragment  implements OnClubListener {
         super.onCreate(savedInstanceState);
         //reference the ClubsFragmentVM class
         mClubFragmentVM = ViewModelProviders.of(this).get(ClubFragmentVM.class);
-    }
+    private List<Club> clubsList;
+    private String[] clubsArry;
+    private ListView clubsListView;
+    private SearchView searchView;
+    private static final String TAG = "ClubsFragment";
+
 
     //init UI components
     @Nullable
