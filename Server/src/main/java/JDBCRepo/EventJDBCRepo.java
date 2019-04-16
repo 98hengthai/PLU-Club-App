@@ -1,6 +1,6 @@
 package JDBCRepo;
 
-import prototypes.Interfaces.IEventRepo;
+import Interfaces.IEventRepo;
 import com.google.gson.Gson;
 import entities.Event;
 import dbConnections.DatabaseConnection;
@@ -173,13 +173,14 @@ public class EventJDBCRepo implements IEventRepo {
         try {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
-                "INSERT INTO Event VALUES( ? , ? , ? , ? , ? , ? ");
-            stmt.setString(1, evName);
-            stmt.setString(2, loc);
-            stmt.setString(3, stTime);
-            stmt.setString(4, endTime);
-            stmt.setString(5, rep);
-            stmt.setString(6, cName);
+                "INSERT INTO Event VALUES( ?, ? , ? , ? , ? , ? , ? )");
+            stmt.setInt(1, 0);
+            stmt.setString(2, evName);
+            stmt.setString(3, loc);
+            stmt.setString(4, stTime);
+            stmt.setString(5, endTime);
+            stmt.setString(6, rep);
+            stmt.setString(7, cName);
             stmt.execute();
             conn.close();
             return eventExistGivenName(cName);
@@ -230,11 +231,37 @@ public class EventJDBCRepo implements IEventRepo {
 
     @Override
     public boolean deleteEvent(String idNum) {
+        try {
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                    "DELETE FROM Event " +
+                            "WHERE Event.idNumber = ?");
+            stmt.setString(1, idNum);
+            stmt.executeQuery();
+            dbConn.close();
+
+            return !eventExist(idNum);
+        } catch (SQLException e){
+            System.out.println("error in deleteEvent : " + e.getMessage());
+        }
         return false;
     }
 
     @Override
     public boolean deleteEventGivenName(String evName) {
+        try {
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement(
+                    "DELETE FROM Event " +
+                            "WHERE Event.Event_Name= ?");
+            stmt.setString(1, evName);
+            stmt.executeQuery();
+            dbConn.close();
+            //TODO: Create eventExist given EventName
+            return true;
+        } catch (SQLException e){
+            System.out.println("error in deleteEvent : " + e.getMessage());
+        }
         return false;
     }
 

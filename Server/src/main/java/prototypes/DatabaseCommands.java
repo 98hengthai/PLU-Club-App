@@ -147,9 +147,9 @@ public class DatabaseCommands {
 
     /**
      * Given a username, return a list of clubs that match that
-     *  prototypes.User's interests and order it by the number of interests matched
+     *  entities.User's interests and order it by the number of interests matched
      * @param userName
-     * @return A ResultSet of club names that match prototypes.User Interests
+     * @return A ResultSet of club names that match entities.User Interests
      */
     public ResultSet getRecomClubs(String userName){
         ResultSet rs = null;

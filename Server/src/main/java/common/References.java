@@ -27,4 +27,21 @@ public class References {
      */
     public static final String LOCAL_OLD_SQLITE_DB_URL = "jdbc:sqlite:/D:/SQLServer/ClubDatabase";
 
+    /**
+     * These are the error codes for returning to in-progress work
+     */
+    public static final String ERROR_403_EDIT = "ERROR 403 - Edit Failed";
+
+    public static final String ERROR_403_DELETE = "ERROR 403 - Delete Failed";
+
+    public static final String ERROR_403_CREATE = "ERROR 403 - Create Failed";
+
+    public static final String ERROR_CODE_503 = "ERROR 503 - Service Unavailable";
+
+    public static final String ERROR_CODE_404 = "ERROR 404 - Resource Not Found";
+
+    public static final String API_CODE_200 = "Code 200 - Successful";
+
+    public static final String API_CODE_201 = "Code 201 - Successfully Created";
+
 }

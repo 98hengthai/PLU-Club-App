@@ -1,6 +1,6 @@
 package JDBCRepo;
 
-import prototypes.Interfaces.IClubRepo;
+import Interfaces.IClubRepo;
 import dbConnections.DatabaseConnection;
 import com.google.gson.Gson;
 import entities.Club;

@@ -1,6 +1,7 @@
 package prototypes;
 
 import com.google.gson.Gson;
+import entities.User;
 
 import static spark.Spark.*;
 
@@ -36,7 +37,7 @@ public class SparkRestExample {
             if (editedUser != null) {
                 return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, new Gson().toJsonTree(editedUser)));
             } else {
-                return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, new Gson().toJson("prototypes.User not found or error in edit")));
+                return new Gson().toJson(new StandardResponse(StatusResponse.ERROR, new Gson().toJson("entities.User not found or error in edit")));
             }
         });
 
@@ -50,7 +51,7 @@ public class SparkRestExample {
         options("/users/:id", (request, response) -> {
             response.type("application/json");
 
-            return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, (userService.userExist(request.params(":id"))) ? "prototypes.User exists" : "prototypes.User does not exists"));
+            return new Gson().toJson(new StandardResponse(StatusResponse.SUCCESS, (userService.userExist(request.params(":id"))) ? "entities.User exists" : "entities.User does not exists"));
         });
 
     }

@@ -5,6 +5,7 @@
     android:background="@android:color/darker_gray">
 
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
@@ -17,4 +18,28 @@
         android:layout_marginTop="7dp"
         android:text="Event Fragment"
         android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/eventView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_marginTop="267dp"
+        android:layout_marginEnd="309dp"
+        android:layout_marginRight="309dp"
+        android:layout_marginBottom="-168dp"
+        android:text="TextView" />
+=======
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/recycleView_events"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:padding="4dp"
+       android:scrollbars="vertical"
+       android:background="@android:color/darker_gray"
+       />
+>>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
 </RelativeLayout>
