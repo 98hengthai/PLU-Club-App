@@ -7,17 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="300460bc-1efc-4bb6-ae12-250d14b9cfd5" name="Default" comment="Started implementation of Events Entity for JDBC Repo. Also created the Interface for EventRepo and the Test class for EventJDBCRepo.&#10;As of current, only the &quot;get&quot; commands are fully functional and implemented. Other routes will return a &quot;Not Yet Implemented&quot; sign.">
-      <change afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/Clubs/Clubs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/Services/MyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/utils/HttpHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/utils/NetworkHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/Events/Events.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/InterestFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/Services/EventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidApp/app/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidApp/app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/res/layout/content_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidApp/app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/ClubsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/ClubsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/EventsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/EventsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/Services/MyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/java/example/club/plu/navbarlayout/Services/MyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidApp/app/app/src/main/res/layout/fragment_events.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidApp/app/app/src/main/res/layout/fragment_events.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/main1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/main1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-app.iml" afterDir="false" />
     </list>
@@ -43,17 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/src/main/java/dbConnections/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="22">
               <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/src/main/java/prototypes/Interfaces/IEventRepo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -133,10 +124,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1273" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="615" />
+    <option name="y" value="-10" />
     <option name="width" value="1294" />
-    <option name="height" value="1057" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -146,6 +138,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pluclubapp" type="58d84e3e:PackageViewProjectNode" />
+              <item name="main1" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -244,17 +247,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="pluclubapp" type="58d84e3e:PackageViewProjectNode" />
-              <item name="main1" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,13 +255,13 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553538004018" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554420033945" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="junit.framework.TestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="junit.framework.TestCase" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="D:/Downloads/mariadb-java-client-2.4.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pluDifferent" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -551,10 +543,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1273" y="0" width="1294" height="1057" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.29578605" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.15222576" />
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.16151386" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Designer" order="3" />
@@ -563,11 +554,9 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="UI Designer" order="8" />
-      <window_info anchor="bottom" id="Tool Output" />
-      <window_info anchor="bottom" id="ANTLR Preview" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.29329005" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49840087" weight="0.299117" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -579,9 +568,11 @@
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4989339" weight="0.24175824" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4989339" weight="0.32575756" />
+      <window_info anchor="bottom" id="Tool Output" order="14" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="15" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24959481" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="right" id="Flutter Inspector" order="4" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
@@ -856,10 +847,10 @@
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/JDBCRepo/ClubJDBCRepo.java" />
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/Tests/EventJDBCRepoTest.java" />
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/JDBCRepo/EventJDBCRepo.java" />
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/entities/Club.java">
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/common/References.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -870,16 +861,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/src/main/java/common/References.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.5/spark-core-2.5.jar!/spark/Route.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="110">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/src/main/java/entities/Club.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/dbConnections/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state relative-caret-position="22">
           <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>

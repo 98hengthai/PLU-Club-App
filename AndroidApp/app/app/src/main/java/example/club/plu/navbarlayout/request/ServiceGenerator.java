@@ -16,11 +16,12 @@ public class ServiceGenerator {
     //return the ClubApi object
     public static  ClubApi getClubApi() { return clubApi; }
 
-//    //instantiation of EventApi
-//    private static EventApi eventApi = retrofit.create(EventApi.class);
-//    //return the EventApi object
-//    public static EventApi getEventApi(){
-//        return eventApi;
-//    }
+    //instantiation of EventApi
+    private static EventApi eventApi = retrofit.create(EventApi.class);
+    //return the EventApi object
+    public static EventApi getEventApi(){
+        return eventApi;
+    }
+
 
 }

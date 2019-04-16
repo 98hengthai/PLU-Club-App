@@ -100,10 +100,11 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_clubs:
 
+=======
                 ClubsFragment clubsFragment = new ClubsFragment();
+>>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
                 //init the array of all clubs name
-                clubsFragment.initializeClubsArray(new String[0]);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,clubsFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ClubsFragment()).commit();
                 break;
             case R.id.nav_events:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventsFragment()).commit();

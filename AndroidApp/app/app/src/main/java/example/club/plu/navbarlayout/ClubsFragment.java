@@ -29,6 +29,11 @@ public class ClubsFragment extends Fragment implements OnClubListener {
 
 
 
+=======
+
+
+
+>>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
     private List<Club> clubsList;
     private String[] clubsArry;
     private ListView clubsListView;
@@ -56,6 +61,7 @@ public class ClubsFragment extends Fragment implements OnClubListener {
         initRecycleView(view);
         testRetrofitRquest();
         initSearchView(view);
+
 
 
 
