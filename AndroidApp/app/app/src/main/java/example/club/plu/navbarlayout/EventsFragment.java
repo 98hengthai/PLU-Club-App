@@ -25,7 +25,6 @@ import example.club.plu.navbarlayout.model.Event;
 import example.club.plu.navbarlayout.utils.Testing;
 import example.club.plu.navbarlayout.viewModel.EventFragmentVM;
 
-<<<<<<< HEAD
 public class EventsFragment extends Fragment implements OnEventListener{
     private EventFragmentVM mEventFragmentVM;
     private RecyclerView mRecyclerView;
@@ -38,23 +37,11 @@ public class EventsFragment extends Fragment implements OnEventListener{
 
 
 =======
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import example.club.plu.navbarlayout.model.Event;
-import example.club.plu.navbarlayout.request.ServiceGenerator;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class EventsFragment extends Fragment {
 >>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
     private static final String TAG = "EventsFragment";
-    
+
     @Nullable
     @Override
-<<<<<<< HEAD
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events_list, container, false);
         mEventFragmentVM = ViewModelProviders.of(this).get(EventFragmentVM.class);
@@ -123,8 +110,6 @@ public class EventsFragment extends Fragment {
     @Override
     public void onCategoryClick(String category) {
 =======
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_events, container, false);
 >>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
 
     }

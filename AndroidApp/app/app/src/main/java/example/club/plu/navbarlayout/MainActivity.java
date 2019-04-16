@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_clubs:
 
-<<<<<<< HEAD
 =======
                 ClubsFragment clubsFragment = new ClubsFragment();
 >>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
@@ -116,11 +115,6 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-<<<<<<< HEAD
-
-
-
-=======
     /**@NonNull
      @Override
      public Loader<String> onCreateLoader(int i, @Nullable Bundle bundle) {
@@ -203,5 +197,4 @@ public class MainActivity extends AppCompatActivity
 
 
 
->>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
 }

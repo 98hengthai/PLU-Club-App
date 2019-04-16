@@ -26,7 +26,8 @@ public class ClubsFragment extends Fragment implements OnClubListener {
     private ClubFragmentVM mClubFragmentVM;
     private RecyclerView mRecyclerView;
     private ClubRecycleAdapter mClubRecycleAdapter;
-<<<<<<< HEAD
+
+
 
 =======
 
@@ -39,7 +40,13 @@ public class ClubsFragment extends Fragment implements OnClubListener {
     private SearchView searchView;
     private static final String TAG = "ClubsFragment";
 
-    private static final String TAG = "ClubsFragment";
+
+    public void initializeClubsArray(String[] clubs){
+//       clubsArry = clubs;
+        clubsArry = new String[]{"AbsoLUTE: Christian Fellowship","Anime Club","Art Club","Chemistry Club","Dance Club","Health Sciences Club","Math Club",
+                "Computer Science Club", "Scandinavian Club", "Trombone Club", "United Students Association", "World of Anycraft"};
+        Arrays.sort(clubsArry);
+    }
 
     @Nullable
     @Override
@@ -60,7 +67,7 @@ public class ClubsFragment extends Fragment implements OnClubListener {
 
 
 
-<<<<<<< HEAD
+
 
 
 //        ListView clubsListView = view.findViewById(R.id.clubs_listView);
@@ -123,70 +130,6 @@ public class ClubsFragment extends Fragment implements OnClubListener {
         searchClubsApi();
     }
 
-=======
-
-
-//        ListView clubsListView = view.findViewById(R.id.clubs_listView);
-//        searchView = (SearchView) view.findViewById(R.id.clubs_searchView);
-//
-//        final ListAdapter clubsListViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1, clubsArry);
-//        clubsListView.setAdapter(clubsListViewAdapter);
-//        clubsListView.setTextFilterEnabled(true);
-//
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                ((ArrayAdapter) clubsListViewAdapter).getFilter().filter(newText);
-//                return false;
-//            }
-//        });
-//
-//        clubsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            //parent is the list view, view is the clicked item, position is view's index, id
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                //TODO: open the club home page view
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ClubHomePageFragment()).addToBackStack(null).commit();
-//            }
-//        });
-//
-//        view.findViewById(R.id.testButton).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                testRetrofitRquest();
-//            }
-//        });
-
-        return view;
-    }
-
-//method to observe the VM club list
-    private void subscribeObservers(){
-        mClubFragmentVM.getClubs().observe(this, new Observer<List<Club>>() {
-            @Override
-            public void onChanged(@Nullable List<Club> clubs) {
-                if (clubs != null) {
-                    Testing.printClubs(clubs, TAG);
-                    mClubRecycleAdapter.setClubs(clubs);
-                } else {
-                    Log.d(TAG, "onChanged: " + "clubs is null");
-                }
-
-            }
-        });
-    }
-
-
-
-    private void testRetrofitRquest(){
-        searchClubsApi();
-    }
-
->>>>>>> cb198f05b50fced86c34d98e20dd279187f8455d
     private void searchClubsApi() {
         mClubFragmentVM.searchClubsApi();
     }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E6A41D</color>
+    <color name="colorPrimaryDark">#E6A41D</color>
+    <color name="colorAccent">#333333</color>
+
+    <!--color for clubs list in the fragment_clubs_list_item.xml-->
+    <color name="red">#e22b2b</color>
+</resources>
