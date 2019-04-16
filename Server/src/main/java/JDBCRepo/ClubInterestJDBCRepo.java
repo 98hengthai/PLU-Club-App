@@ -56,7 +56,7 @@ public class ClubInterestJDBCRepo implements IClubInterestsRepo {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement("" +
                     "SELECT * " +
-                    "FROM ClubInterests" +
+                    "FROM ClubInterests " +
                     "WHERE ClubInterests.ClubName = ? ");
             stmt.setString(1, clubName);
             rs = stmt.executeQuery();
@@ -89,7 +89,7 @@ public class ClubInterestJDBCRepo implements IClubInterestsRepo {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement("" +
                     "SELECT * " +
-                    "FROM ClubInterests" +
+                    "FROM ClubInterests " +
                     "WHERE ClubInterests.InterestName = ? ");
             stmt.setString(1, interestName);
             rs = stmt.executeQuery();

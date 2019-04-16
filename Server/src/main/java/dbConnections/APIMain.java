@@ -25,8 +25,8 @@ public class APIMain {
 
         //User Commands
         get("/user", controller::getAllUsers);
-        get("/user/:email", controller::getUserGivenEmail);
-        get("/user/:name", controller::getUserGivenName);
+        get("/user/email/:email", controller::getUserGivenEmail);
+        get("/user/name/:name", controller::getUserGivenName);
         post("/user", controller::createUser);
         put("/user", controller::updateUser);
         put("/user/name", controller::updateUserGivenName);
@@ -40,16 +40,34 @@ public class APIMain {
 
         //ClubInterest Commands
         get("/clubInterests", controller::getAllClubInterests);
-        get("/clubInterests/:club", controller::getClubInterestsGivenClub);  //Must specify club because no point in having a get for all entities
-        get("/clubInterests/:interest", controller::getClubInterestsGivenInt);
+        get("/clubInterests/club/:club", controller::getClubInterestsGivenClub);  //Must specify club because no point in having a get for all entities
+        get("/clubInterests/interest/:interest", controller::getClubInterestsGivenInt);
         post("/clubInterests", controller::createClubInterest);                //Requires club and Interest
         delete("/clubInterests/:club/:interest", controller::deleteClubInterest);  //Requires both club and interest to delete
 
         //UserInterest Commands
         get("/userInterests", controller::getAllUserInterests);
-        get("/userInterests/:userEmail", controller::getUserInterestsGivenEmail);
-        get("/userInterests/:interest", controller::getUserInterestsGivenInt);
+        get("/userInterests/user/:userEmail", controller::getUserInterestsGivenEmail);
+        get("/userInterests/interest/:interest", controller::getUserInterestsGivenInt);
         post("/userInterests", controller::createUserInterest);                         //Requires User and Interest
         delete("/userInterests/:userEmail/:interest", controller::deleteUserInterest);  //Requires user and interest
+
+        //UserEvents Commands
+        get("/userEvents", controller::getAllUserEvents);
+        get("/userEvents/eventID/:idNum", controller::getUserEventsGivenIDNum);
+        get("/userEvents/userEmail/:userEmail", controller::getUserEventsGivenUserEmail);
+        get("/userEvents/reply/:eventID/:userEmail", controller::getReply);
+        post("/userEvents", controller::createUserEvents);
+        put("/userEvents", controller::editUserEvents);
+        delete("/userEvents/:eventID/:userEmail", controller::deleteUserEvent);
+
+        //ClubUsers Commands
+        get("/clubUsers", controller::getAllClubUsers);
+        get("/clubUsers/userEmail/:userEmail", controller::getAllClubsGivenUser);
+        get("/clubUsers/clubName/:clubName", controller::getAllClubsGivenClub);
+        get("/clubUsers/role/:clubName/:userEmail", controller::getClubUsersRole);
+        post("/clubUsers", controller::createClubUsers);
+        put("/clubUsers", controller::editClubUsers);
+        delete("/clubUsers/:clubName/:userEmail", controller::deleteClubUser);
     }
 }

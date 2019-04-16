@@ -15,6 +15,8 @@ public class Controller {
     private InterestJDBCRepo intRepo;
     private ClubInterestJDBCRepo clubIntRepo;
     private UserInterestJDBCRepo userIntRepo;
+    private UserEventsJDBCRepo userEventRepo;
+    private ClubUsersJDBCRepo clubUsersRepo;
     private String databaseURL = References.OFF_CAMPUS_DB_URL;
 
     public Controller(){
@@ -24,6 +26,8 @@ public class Controller {
         intRepo = new InterestJDBCRepo(databaseURL);
         clubIntRepo = new ClubInterestJDBCRepo(databaseURL);
         userIntRepo = new UserInterestJDBCRepo(databaseURL);
+        userEventRepo = new UserEventsJDBCRepo(databaseURL);
+        clubUsersRepo = new ClubUsersJDBCRepo(databaseURL);
     }
 
     //////////////////////////////////////////////////////////////
@@ -265,4 +269,67 @@ public class Controller {
     public String deleteUserInterest(Request request, Response resp){
         return References.ERROR_CODE_503;
     }
+
+    //////////////////////////////////////////////////////////////
+    //                   UserEvents Commands                    //
+    //////////////////////////////////////////////////////////////
+    public String getAllUserEvents(Request request, Response resp){
+        return userEventRepo.getAllUserEvents();
+    }
+
+    public String getUserEventsGivenIDNum(Request request, Response resp){
+        return userEventRepo.getUserEventsGivenIDNum(request.params(":idNum"));
+    }
+
+    public String getUserEventsGivenUserEmail(Request request, Response resp){
+        return userEventRepo.getUserEventsGivenUserEmail(request.params(":userEmail"));
+    }
+
+    public String getReply(Request request, Response resp){
+        return userEventRepo.getReplyGivenUserAndEvent(request.params(":eventID"), request.params(":userEmail"));
+    }
+
+    public String createUserEvents(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    public String editUserEvents(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    public String deleteUserEvent(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    //////////////////////////////////////////////////////////////
+    //                   ClubUsers Commands                     //
+    //////////////////////////////////////////////////////////////
+    public String getAllClubUsers(Request request, Response resp){
+        return clubUsersRepo.getAllClubUsers();
+    }
+
+    public String getAllClubsGivenUser(Request request, Response resp){
+        return clubUsersRepo.getAllClubsGivenUser(request.params(":userEmail"));
+    }
+
+    public String getAllClubsGivenClub(Request request, Response resp){
+        return clubUsersRepo.getAllUsersGivenClub(request.params(":clubName"));
+    }
+
+    public String getClubUsersRole(Request request, Response resp){
+        return clubUsersRepo.getRoleGivenNameAndClub(request.params(":clubName"), request.params(":userEmail"));
+    }
+
+    public String createClubUsers(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    public String editClubUsers(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    public String deleteClubUser(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
 }
