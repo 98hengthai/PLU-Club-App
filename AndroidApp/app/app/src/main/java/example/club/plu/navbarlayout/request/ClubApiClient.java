@@ -30,7 +30,7 @@ public class ClubApiClient {
     }
 
     private ClubApiClient(){
-mClubs = new MutableLiveData<>();
+        mClubs = new MutableLiveData<>();
     }
     //getter for liveData
     public LiveData<List<Club>> getClubs() {

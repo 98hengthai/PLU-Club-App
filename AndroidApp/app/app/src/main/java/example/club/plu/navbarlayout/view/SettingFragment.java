@@ -1,4 +1,4 @@
-package example.club.plu.navbarlayout;
+package example.club.plu.navbarlayout.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import example.club.plu.navbarlayout.R;
 
 public class SettingFragment extends Fragment {
     @Nullable

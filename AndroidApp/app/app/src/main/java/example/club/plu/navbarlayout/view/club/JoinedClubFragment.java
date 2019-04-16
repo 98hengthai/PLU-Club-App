@@ -1,4 +1,4 @@
-package example.club.plu.navbarlayout;
+package example.club.plu.navbarlayout.view.club;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,13 +7,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import example.club.plu.navbarlayout.R;
 
-public class ClubHomePageFragment extends Fragment {
+public class JoinedClubFragment extends Fragment {
+    public JoinedClubFragment() {
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.club_view, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_events, container, false);
         return view;
     }
 }

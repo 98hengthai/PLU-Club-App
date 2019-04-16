@@ -1,4 +1,4 @@
-package example.club.plu.navbarlayout;
+package example.club.plu.navbarlayout.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import example.club.plu.navbarlayout.R;
 import example.club.plu.navbarlayout.model.Event;
 import example.club.plu.navbarlayout.request.ServiceGenerator;
 import retrofit2.Call;

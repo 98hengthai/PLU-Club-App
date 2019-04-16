@@ -15,7 +15,7 @@ public class Controller {
     private InterestJDBCRepo intRepo;
     private ClubInterestJDBCRepo clubIntRepo;
     private UserInterestJDBCRepo userIntRepo;
-    private String databaseURL = References.ON_CAMPUS_DB_URL;
+    private String databaseURL = References.OFF_CAMPUS_DB_URL;
 
     public Controller(){
         userRepo = new UserJDBCRepo(databaseURL);

@@ -1,4 +1,4 @@
-package example.club.plu.navbarlayout;
+package example.club.plu.navbarlayout.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import example.club.plu.navbarlayout.R;
+import example.club.plu.navbarlayout.view.club.MainClubFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{//, LoaderManager.LoaderCallbacks<String> {
@@ -99,11 +102,7 @@ public class MainActivity extends AppCompatActivity
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
                 break;
             case R.id.nav_clubs:
-
-                ClubsFragment clubsFragment = new ClubsFragment();
-                //init the array of all clubs name
-                clubsFragment.initializeClubsArray(new String[0]);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,clubsFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MainClubFragment()).commit();
                 break;
             case R.id.nav_events:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventsFragment()).commit();

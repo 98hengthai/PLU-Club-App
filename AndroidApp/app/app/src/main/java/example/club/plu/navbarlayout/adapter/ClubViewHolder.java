@@ -15,7 +15,6 @@ public class ClubViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         super(itemView);
         this.onClubListener = onClubListener;
         title = itemView.findViewById(R.id.club_title);
-
         itemView.setOnClickListener(this);
     }
 
