@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import example.club.plu.navbarlayout.R;
 import example.club.plu.navbarlayout.view.club.MainClubFragment;
+import example.club.plu.navbarlayout.view.event.EventsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{//, LoaderManager.LoaderCallbacks<String> {
@@ -103,8 +104,6 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_clubs:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MainClubFragment()).commit();
-                //init the array of all clubs name
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ClubsFragment()).commit();
                 break;
             case R.id.nav_events:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventsFragment()).commit();
@@ -114,87 +113,5 @@ public class MainActivity extends AppCompatActivity
         return true;
 
     }
-
-    /**@NonNull
-     @Override
-     public Loader<String> onCreateLoader(int i, @Nullable Bundle bundle) {
-     tv.append("creating loader\n");
-     return new MyTaskLoader(this);
-     }
-
-     @Override
-     public void onLoadFinished(@NonNull Loader<String> loader, String o) {
-     tv.append("Loader finished, returned: " + o + "\n");
-     }
-
-     @Override
-     public void onLoaderReset(@NonNull Loader<String> loader) {
-
-     }
-     //TODO
-     /**@Override
-     public boolean onCreateOptionsMenu(Menu menu) {
-     getMenuInflater().inflate(R.menu.main, menu);
-     MenuItem item = menu.findItem(R.id.spinner);
-     Spinner spinner = (Spinner) MenuItemCompat.getActionView(item);
-     String[] choices = {"Club 1", "Club 2", "Home"};
-     ArrayAdapter<String> a;
-     a = new ArrayAdapter<String>(getApplication(), android.R.layout.simple_spinner_item, choices);
-     spinner.setAdapter(a); // set the adapter to provide layout of rows and content
-     spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-     return true;
-     }*/
-
-    /**private class MyAsyncTask extends AsyncTask<String, String, Void>{
-
-    @Override
-    protected Void doInBackground(String... strings) {
-    for (String str: strings) {
-    publishProgress(str);
-    try {
-    Thread.sleep(1000);
-    } catch (InterruptedException e) {
-    e.printStackTrace();
-    }
-    }
-
-
-    return null;
-    }
-
-    @Override
-    protected void onProgressUpdate(String... values) {
-    super.onProgressUpdate(values);
-    tv.append(values[0] + "\n");
-    }
-    }
-     private static class MyTaskLoader extends AsyncTaskLoader<String>{
-
-     public MyTaskLoader(@NonNull Context context) {
-
-
-     super(context);
-     }
-
-     @Override
-     public String loadInBackground() {
-
-     try {
-     Thread.sleep(1000);
-     } catch (InterruptedException e) {
-     e.printStackTrace();
-     }
-
-     return "from the loader";
-     }
-
-     @Override
-     public void deliverResult(@Nullable String data) {
-     data += ", delivered";
-     super.deliverResult(data);
-     }
-     }**/
-
-
 
 }

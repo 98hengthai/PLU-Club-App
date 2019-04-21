@@ -2,7 +2,7 @@ package example.club.plu.navbarlayout.repository;
 import android.arch.lifecycle.LiveData;
 import java.util.List;
 import example.club.plu.navbarlayout.model.Club;
-import example.club.plu.navbarlayout.request.ClubApiClient;
+import example.club.plu.navbarlayout.request.club.ClubApiClient;
 
 public class ClubRepository {
     private static ClubRepository instance; //Singleton

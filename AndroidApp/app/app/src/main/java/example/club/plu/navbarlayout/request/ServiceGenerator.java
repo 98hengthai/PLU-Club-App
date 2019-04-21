@@ -1,9 +1,11 @@
 package example.club.plu.navbarlayout.request;
 
-import example.club.plu.navbarlayout.model.Club;
+import example.club.plu.navbarlayout.request.club.ClubApi;
+import example.club.plu.navbarlayout.request.event.EventApi;
 import example.club.plu.navbarlayout.utils.Constants;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class ServiceGenerator {
     //create a connection to the server using Gson converter by retrofit
@@ -22,6 +24,5 @@ public class ServiceGenerator {
     public static EventApi getEventApi(){
         return eventApi;
     }
-
 
 }

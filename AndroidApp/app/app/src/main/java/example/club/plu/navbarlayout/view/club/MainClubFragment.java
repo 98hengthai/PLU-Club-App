@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import example.club.plu.navbarlayout.R;
-import example.club.plu.navbarlayout.adapter.SectionsPageAdapter;
+import example.club.plu.navbarlayout.adapter.club.SectionsPageAdapter;
 
 
 public class MainClubFragment extends Fragment  {

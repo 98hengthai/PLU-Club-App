@@ -1,5 +1,4 @@
 package example.club.plu.navbarlayout.view.club;
-
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -16,8 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.List;
 import example.club.plu.navbarlayout.R;
-import example.club.plu.navbarlayout.adapter.ClubRecycleAdapter;
-import example.club.plu.navbarlayout.adapter.OnClubListener;
+import example.club.plu.navbarlayout.adapter.club.ClubRecycleAdapter;
+import example.club.plu.navbarlayout.adapter.club.OnClubListener;
 import example.club.plu.navbarlayout.model.Club;
 import example.club.plu.navbarlayout.utils.Testing;
 import example.club.plu.navbarlayout.viewModel.ClubFragmentVM;
@@ -26,7 +25,7 @@ public class AllClubFragment extends Fragment  implements OnClubListener {
     private ClubFragmentVM mClubFragmentVM;
     private RecyclerView mRecyclerView;
     private ClubRecycleAdapter mClubRecycleAdapter;
-    private static final String TAG = "MainClubFragment";
+    private static final String TAG = "AllClubFragment";
 
     //empty constructor
     public AllClubFragment() {
@@ -38,12 +37,7 @@ public class AllClubFragment extends Fragment  implements OnClubListener {
         super.onCreate(savedInstanceState);
         //reference the ClubsFragmentVM class
         mClubFragmentVM = ViewModelProviders.of(this).get(ClubFragmentVM.class);
-    private List<Club> clubsList;
-    private String[] clubsArry;
-    private ListView clubsListView;
-    private SearchView searchView;
-    private static final String TAG = "ClubsFragment";
-
+    }
 
     //init UI components
     @Nullable
