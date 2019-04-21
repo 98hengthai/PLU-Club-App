@@ -69,5 +69,8 @@ public class APIMain {
         post("/clubUsers", controller::createClubUsers);
         put("/clubUsers", controller::editClubUsers);
         delete("/clubUsers/:clubName/:userEmail", controller::deleteClubUser);
+
+        //For Homepage
+        get("/homePageEvents/:userEmail", controller::getHomePageEventsForUser);
     }
 }

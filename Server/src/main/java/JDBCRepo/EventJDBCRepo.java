@@ -24,7 +24,8 @@ public class EventJDBCRepo implements IEventRepo {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
-                        "FROM Event ");
+                        "FROM Event " +
+                        "ORDER BY Event.Start_Time");
             rs = stmt.executeQuery();
 
             //Add all events to a string and return
@@ -61,7 +62,8 @@ public class EventJDBCRepo implements IEventRepo {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
                             "FROM Event " +
-                            "WHERE Event.Event_Name = ?");
+                            "WHERE Event.Event_Name = ? " +
+                            "ORDER BY Event.Start_Time ");
             stmt.setString(1, eventName);
             rs = stmt.executeQuery();
 
@@ -99,7 +101,8 @@ public class EventJDBCRepo implements IEventRepo {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
                             "FROM Event " +
-                            "WHERE Event.idNumber = ?");
+                            "WHERE Event.idNumber = ? " +
+                            "ORDER BY Event.Start_Time");
             stmt.setString(1, idNum);
             rs = stmt.executeQuery();
 
@@ -137,7 +140,8 @@ public class EventJDBCRepo implements IEventRepo {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
                             "FROM Event " +
-                            "WHERE Event.ClubName = ?");
+                            "WHERE Event.ClubName = ? " +
+                            "ORDER BY Event.Start_Time");
             stmt.setString(1, clubName);
             rs = stmt.executeQuery();
 

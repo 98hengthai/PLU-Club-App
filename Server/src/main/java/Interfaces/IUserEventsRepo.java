@@ -10,6 +10,8 @@ public interface IUserEventsRepo {
 
     String createUserEvents(String eventIDNum, String clubName, String userEmail, String reply);
 
+    String editUserEvents(String eventIDNum, String clubName, String userEmail, String reply);
+
     String deleteUserEvents(String eventIDNum, String userEmail);
 
     boolean userEventsExist(String eventIDNum, String userEmail);

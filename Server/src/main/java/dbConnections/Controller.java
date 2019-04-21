@@ -4,19 +4,18 @@ import JDBCRepo.*;
 import common.References;
 import spark.Request;
 import spark.Response;
-import spark.Route;
-
-import java.sql.Ref;
+import Interfaces.*;
 
 public class Controller {
-    private UserJDBCRepo userRepo;
-    private ClubJDBCRepo clubRepo;
-    private EventJDBCRepo eventRepo;
-    private InterestJDBCRepo intRepo;
-    private ClubInterestJDBCRepo clubIntRepo;
-    private UserInterestJDBCRepo userIntRepo;
-    private UserEventsJDBCRepo userEventRepo;
-    private ClubUsersJDBCRepo clubUsersRepo;
+    private IUsersRepo userRepo;
+    private IClubRepo clubRepo;
+    private IEventRepo eventRepo;
+    private IInterestsRepo intRepo;
+    private IClubInterestsRepo clubIntRepo;
+    private IUserInterestsRepo userIntRepo;
+    private IUserEventsRepo userEventRepo;
+    private IClubUsersRepo clubUsersRepo;
+    private HomepageJDBCRepo homepageRepo;
     private String databaseURL = References.OFF_CAMPUS_DB_URL;
 
     public Controller(){
@@ -28,6 +27,7 @@ public class Controller {
         userIntRepo = new UserInterestJDBCRepo(databaseURL);
         userEventRepo = new UserEventsJDBCRepo(databaseURL);
         clubUsersRepo = new ClubUsersJDBCRepo(databaseURL);
+        homepageRepo = new HomepageJDBCRepo(databaseURL);
     }
 
     //////////////////////////////////////////////////////////////
@@ -57,9 +57,18 @@ public class Controller {
     }
 
     public String updateClub(Request request, Response resp){
-        //TODO: How to retrieve data from the request in the API link
-        //Return the club information in JSON format
-        return "Not yet implemented";
+        String[] strTemp = request.body().split("&");
+        String name = strTemp[0].split("=")[1];
+        String loc = strTemp[0].split("=")[1];
+        String cEmail = strTemp[0].split("=")[1];
+        String desc = strTemp[0].split("=")[1];
+        try {
+            clubRepo.editClub(name, loc, cEmail, desc);
+        } catch (Exception e){
+            System.out.println("Error in create Club");
+            return References.ERROR_403_EDIT;
+        }
+        return References.API_CODE_201;
     }
 
     public String deleteClub(Request request, Response resp){
@@ -332,4 +341,7 @@ public class Controller {
         return References.ERROR_CODE_503;
     }
 
+    public String getHomePageEventsForUser(Request request, Response resp){
+        return homepageRepo.getUserEventsAndTime(request.params(":userEmail"));
+    }
 }
