@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import example.club.plu.navbarlayout.R;
-import example.club.plu.navbarlayout.model.Club;
+import example.club.plu.navbarlayout.model.club.Club;
 
 public class ClubRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Filterable {
     private static final String TAG = "ClubRecycleAdapter";
     private List<Club> mClubList;
     private List<Club> mClubListFull; //a copied of themClubList that uses for filter.
-    private  OnClubListener mOnClubListener;
+    private OnClubListener mOnClubListener;
 
     public ClubRecycleAdapter(OnClubListener mOnClubListener) {
         this.mOnClubListener = mOnClubListener;

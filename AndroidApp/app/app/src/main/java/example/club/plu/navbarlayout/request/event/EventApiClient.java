@@ -9,7 +9,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 import example.club.plu.navbarlayout.AppExecutors;
-import example.club.plu.navbarlayout.model.Event;
+import example.club.plu.navbarlayout.model.event.Event;
 import example.club.plu.navbarlayout.request.ServiceGenerator;
 import example.club.plu.navbarlayout.utils.Constants;
 import retrofit2.Call;

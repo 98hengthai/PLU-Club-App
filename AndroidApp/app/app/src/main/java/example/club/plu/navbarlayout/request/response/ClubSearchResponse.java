@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 
 import java.util.List;
 
-import example.club.plu.navbarlayout.model.Club;
+import example.club.plu.navbarlayout.model.club.Club;
 
 public class ClubSearchResponse {
     @Expose()

@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import example.club.plu.navbarlayout.R;
-import example.club.plu.navbarlayout.model.Club;
+import example.club.plu.navbarlayout.model.club.Club;
 
 public class ClubHomePageActivity extends AppCompatActivity {
     //tag for testing

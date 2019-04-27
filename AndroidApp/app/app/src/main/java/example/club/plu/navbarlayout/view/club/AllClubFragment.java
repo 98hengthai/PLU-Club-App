@@ -17,7 +17,7 @@ import java.util.List;
 import example.club.plu.navbarlayout.R;
 import example.club.plu.navbarlayout.adapter.club.ClubRecycleAdapter;
 import example.club.plu.navbarlayout.adapter.club.OnClubListener;
-import example.club.plu.navbarlayout.model.Club;
+import example.club.plu.navbarlayout.model.club.Club;
 import example.club.plu.navbarlayout.utils.Testing;
 import example.club.plu.navbarlayout.viewModel.ClubFragmentVM;
 
@@ -44,12 +44,16 @@ public class AllClubFragment extends Fragment  implements OnClubListener {
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_all_club_list, container, false);
-        //observer list of club in VM
-        subscribeObservers();
+        //init club list
+        searchClubsApi();
+
         //mRecyclerView
         mRecyclerView = view.findViewById(R.id.club_recycleList);
+        //init recycle view
         initRecycleView(view);
-        testRetrofitRquest();
+        //observer list of club in VM
+        subscribeObservers();
+        //
         initSearchView(view);
         return view;
     }
@@ -79,10 +83,7 @@ public class AllClubFragment extends Fragment  implements OnClubListener {
         });
     }
 
-    //method for testing server request for clubs
-    private void testRetrofitRquest(){
-        searchClubsApi();
-    }
+    //api GET clubs
     private void searchClubsApi() {
         mClubFragmentVM.searchClubsApi();
     }

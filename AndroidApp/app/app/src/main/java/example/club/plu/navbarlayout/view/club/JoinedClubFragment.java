@@ -9,26 +9,25 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import example.club.plu.navbarlayout.R;
-import example.club.plu.navbarlayout.adapter.club.ClubRecycleAdapter;
+import example.club.plu.navbarlayout.adapter.club.JoinedClubRecycleAdapter;
 import example.club.plu.navbarlayout.adapter.club.OnClubListener;
-import example.club.plu.navbarlayout.model.Club;
+import example.club.plu.navbarlayout.model.club.ClubUsers;
+import example.club.plu.navbarlayout.utils.Constants;
 import example.club.plu.navbarlayout.utils.Testing;
 import example.club.plu.navbarlayout.viewModel.ClubFragmentVM;
 
 public class JoinedClubFragment extends Fragment implements OnClubListener {
     private ClubFragmentVM mClubFragmentVM;
     private RecyclerView mRecyclerView;
-    private ClubRecycleAdapter mClubRecycleAdapter;
+    private JoinedClubRecycleAdapter mClubRecycleAdapter;
     private static final String TAG = "JoinedClubFragment";
 
     public JoinedClubFragment() {
@@ -46,15 +45,21 @@ public class JoinedClubFragment extends Fragment implements OnClubListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_all_club_list, container, false);
-        //observer list of club in VM
-        subscribeObservers();
-        //mRecyclerView
-        mRecyclerView = view.findViewById(R.id.club_recycleList);
+        View view = inflater.inflate(R.layout.fragment_joined_club_list, container, false);
+        //init club list
+        searchJoinedClubApi();
+
+        //init recycle view
+        mRecyclerView = view.findViewById(R.id.joined_club_recycleList);
         initRecycleView(view);
-        testRetrofitRquest();
-        initSearchView(view);
+        //observe live data of club list
+        subscribeObservers();
         return view;
+    }
+
+    //API GET: setting livedata of List<UserClubs>
+    private void searchJoinedClubApi() {
+        mClubFragmentVM.searchJoinedClubsApi(Constants.testEmail);
     }
 
     //create a new activity intent along with club object
@@ -68,15 +73,12 @@ public class JoinedClubFragment extends Fragment implements OnClubListener {
 
     //method to observe the VM club list
     private void subscribeObservers(){
-        mClubFragmentVM.getClubs().observe(this, new Observer<List<Club>>() {
+        mClubFragmentVM.getJoinedClubs().observe(this, new Observer<List<ClubUsers>>() {
             @Override
-            public void onChanged(@Nullable List<Club> clubs) {
-                if (clubs != null) {
-                    Testing.printClubs(clubs, TAG);
-                    //TODO: demo
-                    List<Club> demo = new ArrayList<>();
-                    mClubRecycleAdapter.setClubs(demo);
-//                    mClubRecycleAdapter.setClubs(clubs);
+            public void onChanged(@Nullable List<ClubUsers> clubUsers) {
+                if(clubUsers != null) {
+                    Testing.printClubUsers(clubUsers, TAG);
+                    mClubRecycleAdapter.setClubs(clubUsers);
                 } else {
                     Log.d(TAG, "onChanged: " + "clubs is null");
                 }
@@ -84,36 +86,12 @@ public class JoinedClubFragment extends Fragment implements OnClubListener {
         });
     }
 
-    //method for testing server request for clubs
-    private void testRetrofitRquest(){
-        searchClubsApi();
-    }
-    private void searchClubsApi() {
-        mClubFragmentVM.searchClubsApi();
-    }
 
     //init recycle view with the adapter
     private void initRecycleView(View view){
-        mClubRecycleAdapter = new ClubRecycleAdapter(this);
+        mClubRecycleAdapter = new JoinedClubRecycleAdapter(this);
         mRecyclerView.setAdapter(mClubRecycleAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-    }
-
-    //search toolbar
-    private void initSearchView(View view){
-        final SearchView searchView = view.findViewById(R.id.search_view_fragment_all_club);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                mClubRecycleAdapter.getFilter().filter(newText);
-                return false;
-            }
-        });
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
     }
 
 

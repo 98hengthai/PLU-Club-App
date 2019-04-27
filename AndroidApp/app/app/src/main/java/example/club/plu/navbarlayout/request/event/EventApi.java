@@ -2,7 +2,7 @@ package example.club.plu.navbarlayout.request.event;
 
 import java.util.List;
 
-import example.club.plu.navbarlayout.model.Event;
+import example.club.plu.navbarlayout.model.event.Event;
 import example.club.plu.navbarlayout.request.response.EventSearchResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -6,11 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import java.util.List;
 
 import example.club.plu.navbarlayout.R;
-import example.club.plu.navbarlayout.model.Event;
+import example.club.plu.navbarlayout.model.event.Event;
 
 public class EventRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final String TAG = "EventRecycleAdapter";
@@ -24,7 +26,7 @@ public class EventRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_events_list, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_event_list_item, viewGroup, false);
         return new EventViewHolder(view, mOnEventListener);
     }
 
@@ -34,7 +36,7 @@ public class EventRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         Log.d(TAG, "onBindViewHolder: " + ((EventViewHolder)viewHolder).eventTitle );
 //        Log.d(TAG, "onBindViewHolder: " + );
         ((EventViewHolder)viewHolder).eventTitle.setText(mEventList.get(i).getName());
-        //TODO:each club homepage
+        ((EventViewHolder)viewHolder).startTime.setText(mEventList.get(i).getStart_time());
     }
 
     @Override
@@ -49,4 +51,15 @@ public class EventRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         mEventList = events;
         notifyDataSetChanged();
     }
+    public Event getSelectedEvent(int position) {
+        if(mEventList != null) {
+            if(mEventList.size() > 0) {
+                return mEventList.get(position);
+            }
+
+        }
+        return  null;
+    }
+
+
 }

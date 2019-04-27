@@ -1,6 +1,7 @@
 package example.club.plu.navbarlayout.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,11 +16,14 @@ import android.view.MenuItem;
 import example.club.plu.navbarlayout.R;
 import example.club.plu.navbarlayout.view.club.MainClubFragment;
 import example.club.plu.navbarlayout.view.event.EventsFragment;
+import example.club.plu.navbarlayout.view.home.HomeFragment;
+import example.club.plu.navbarlayout.view.setting.SettingFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{//, LoaderManager.LoaderCallbacks<String> {
 
     private DrawerLayout drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +49,7 @@ public class MainActivity extends AppCompatActivity
                     new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
-
-
+        
     }//onCreate()
 
     private void sendEmail(View v) {
@@ -107,6 +110,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_events:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new EventsFragment()).commit();
+                break;
+            case R.id.action_settings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingFragment()).commit();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

@@ -52,5 +52,4 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
 
 
-
 }

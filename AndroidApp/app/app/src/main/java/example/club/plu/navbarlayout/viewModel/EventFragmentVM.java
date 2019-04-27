@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel;
 
 import java.util.List;
 
-import example.club.plu.navbarlayout.model.Event;
+import example.club.plu.navbarlayout.model.event.Event;
 import example.club.plu.navbarlayout.repository.EventRepository;
 
 

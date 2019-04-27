@@ -7,14 +7,14 @@ import android.widget.TextView;
 import example.club.plu.navbarlayout.R;
 
 public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    TextView eventTitle;
+    TextView eventTitle, startTime;
     OnEventListener onEventListener;
 
     public EventViewHolder(@NonNull View itemView, OnEventListener onEventInstance) {
         super(itemView);
         this.onEventListener = onEventInstance;
         eventTitle = itemView.findViewById(R.id.event_title);
-
+        startTime = itemView.findViewById(R.id.event_start);
         itemView.setOnClickListener(this);
     }
 
