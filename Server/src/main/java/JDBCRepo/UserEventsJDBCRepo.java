@@ -154,8 +154,22 @@ public class UserEventsJDBCRepo implements IUserEventsRepo {
     }
 
     @Override
-    public String createUserEvents(String eventIDNum, String clubName, String userEmail, String reply) {
-        return null;
+    public boolean createUserEvents(String eventIDNum, String clubName, String userEmail, String reply) {
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "INSERT INTO UserEvents VALUES( ? , ? , ? , ?)");
+            stmt.setString(1, eventIDNum);
+            stmt.setString(2, clubName);
+            stmt.setString(3, userEmail);
+            stmt.setString(4, reply);
+            stmt.execute();
+            conn.close();
+            return userEventsExist(eventIDNum, userEmail);
+        } catch (SQLException e ){
+            System.out.println("Error in createUserEvents " + e.getMessage());
+        }
+        return false;
     }
 
     public String editUserEvents(String eventIDNum, String clubName, String userEmail, String reply){
@@ -168,6 +182,27 @@ public class UserEventsJDBCRepo implements IUserEventsRepo {
 
     @Override
     public boolean userEventsExist(String eventIDNum, String userEmail) {
-        return false;
+        boolean result = false;
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "SELECT * " +
+                    "FROM UserEvents " +
+                    "WHERE UserEvents.EventIDNumber = ? " +
+                    "AND UserEvents.UserEmail = ?");
+            stmt.setString(1, eventIDNum);
+            stmt.setString(2, userEmail);
+            rs = stmt.executeQuery();
+
+            if(rs.next()){
+                result = true;
+            }
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("Error in UserEvents Exist " + e.getMessage());
+        }
+        return result;
     }
 }

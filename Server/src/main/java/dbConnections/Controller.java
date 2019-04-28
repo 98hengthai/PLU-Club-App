@@ -299,7 +299,19 @@ public class Controller {
     }
 
     public String createUserEvents(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String eventID = strTemp[0].split("=")[1];
+        String clubName = strTemp[1].split("=")[1];
+        String userEmail = strTemp[2].split("=")[1];
+        String reply = strTemp[3].split("=")[1];
+
+        boolean createSuccess = userEventRepo.createUserEvents(eventID, clubName, userEmail, reply);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
+
     }
 
     public String editUserEvents(Request request, Response resp){
@@ -330,7 +342,17 @@ public class Controller {
     }
 
     public String createClubUsers(Request request, Response resp){
-        return References.ERROR_CODE_503;
+        String[] strTemp = request.body().split("&");
+        String clubName = strTemp[0].split("=")[1];
+        String userEmail = strTemp[1].split("=")[1];
+        String role = strTemp[2].split("=")[1];
+
+        boolean createSuccess = clubUsersRepo.createClubUser(clubName, userEmail, role);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
     }
 
     public String editClubUsers(Request request, Response resp){

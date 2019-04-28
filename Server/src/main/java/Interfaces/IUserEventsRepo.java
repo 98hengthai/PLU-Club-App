@@ -8,7 +8,7 @@ public interface IUserEventsRepo {
 
     String getReplyGivenUserAndEvent(String eventIDNum, String userEmail);
 
-    String createUserEvents(String eventIDNum, String clubName, String userEmail, String reply);
+    boolean createUserEvents(String eventIDNum, String clubName, String userEmail, String reply);
 
     String editUserEvents(String eventIDNum, String clubName, String userEmail, String reply);
 

@@ -149,8 +149,21 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
     }
 
     @Override
-    public String createClubUser(String clubName, String userEmail, String role) {
-        return null;
+    public boolean createClubUser(String clubName, String userEmail, String role) {
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "INSERT INTO ClubUsers VALUES( ? , ? , ?");
+            stmt.setString(1, clubName);
+            stmt.setString(2, userEmail);
+            stmt.setString(3, role);
+            stmt.execute();
+            conn.close();
+            return clubUserExist(clubName, userEmail);
+        } catch (SQLException e ) {
+            System.out.println("Error in createClubUsers " + e.getMessage());
+        }
+        return false;
     }
 
     @Override
@@ -165,6 +178,26 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
 
     @Override
     public boolean clubUserExist(String clubName, String userEmail) {
-        return false;
+        boolean result = false;
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "SELECT * " +
+                    "FROM ClubUsers " +
+                    "WHERE ClubUsers.ClubName = ? AND " +
+                    "ClubUsers.UserEmail = ? ");
+            stmt.setString(1, clubName);
+            stmt.setString(2, userEmail);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+                result = true;
+            }
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("Error in ClubUsers.exist: " + e.getMessage());
+        }
+        return result;
     }
 }

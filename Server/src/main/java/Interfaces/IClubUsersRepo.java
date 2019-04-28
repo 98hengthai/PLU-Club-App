@@ -6,7 +6,7 @@ public interface IClubUsersRepo {
     String getAllUsersGivenClub(String clubName);
     String getRoleGivenNameAndClub(String clubName, String userEmail);
 
-    String createClubUser(String clubName, String userEmail, String role);
+    boolean createClubUser(String clubName, String userEmail, String role);
 
     String editClubUser(String clubName, String userEmail, String role);
 
