@@ -5,6 +5,8 @@ import com.google.gson.Gson;
 import entities.ClubUsers;
 import dbConnections.DatabaseConnection;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClubUsersJDBCRepo implements IClubUsersRepo {
     private Connection conn;
@@ -49,6 +51,8 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
         StringBuilder sb = new StringBuilder();
         ResultSet rs;
         Gson gson = new Gson();
+        List<ClubUsers> clubUsersList = new ArrayList<>();
+
 
         try{
             conn = dbConn.connect();
@@ -60,22 +64,28 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
             rs = stmt.executeQuery();
 
             //Append all data
-            sb.append("[");
+//            sb.append("[");
+
             while(rs.next()){
                 ClubUsers cUser = new ClubUsers();
                 cUser.setClubName(rs.getString("ClubName"));
                 cUser.setUserEmail(rs.getString("UserEmail"));
                 cUser.setRole(rs.getString("Role"));
-                sb.append(gson.toJson(cUser)).append(",\n");
+                clubUsersList.add(cUser);
+//                sb.append(gson.toJson(cUser)).append(",\n");
             }
-            if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
-            sb.append("]");
+//            if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
+//            sb.append("]");
 
             dbConn.close();
         } catch (SQLException e){
             System.out.println("Error in ClubUsersJDBCRepo: GetClubsGivenUser: " + e.getMessage());
         }
-        return sb.toString();
+
+        if(clubUsersList.isEmpty())
+            return "";
+
+        return gson.toJson(clubUsersList);
     }
 
     @Override
