@@ -73,6 +73,8 @@ public class UserJDBCRepo implements IUsersRepo {
                 u.setGradYear(rs.getString("GraduationYear"));
                 u.setStudent(rs.getBoolean("StudentBool"));
                 sb.append(gson.toJson(u)).append(",\n");
+                //
+                return gson.toJson(u);
             }
             if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
             sb.append("]");

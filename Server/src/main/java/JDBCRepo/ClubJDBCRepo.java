@@ -84,8 +84,9 @@ public class ClubJDBCRepo implements IClubRepo {
             rs = stmt.executeQuery();
 
             sb.append("[");
+            Club c = new Club();
             while(rs.next()){
-                Club c = new Club();
+//                Club c = new Club();
                 c.setName(rs.getString("name"));
                 c.setLocation(rs.getString("location"));
                 c.setClubEmail(rs.getString("clubEmail"));
@@ -93,8 +94,8 @@ public class ClubJDBCRepo implements IClubRepo {
                 sb.append( new Gson().toJson(c));
             }
             sb.append("]");
-
             dbConn.close();
+            return new Gson().toJson(c);
         } catch (SQLException e){
             System.out.println("Error in getClub " + e.getMessage());
         }

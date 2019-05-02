@@ -48,6 +48,7 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
 
     @Override
     public String getAllClubsGivenUser(String userEmail) {
+        System.out.println("getAllClubsGivenUser: userEmail - " + userEmail);
         StringBuilder sb = new StringBuilder();
         ResultSet rs;
         Gson gson = new Gson();
@@ -162,8 +163,8 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
     public boolean createClubUser(String clubName, String userEmail, String role) {
         try{
             conn = dbConn.connect();
-            PreparedStatement stmt = conn.prepareStatement("" +
-                    "INSERT INTO ClubUsers VALUES( ? , ? , ?");
+            PreparedStatement stmt = conn.prepareStatement(
+                    "INSERT INTO ClubUsers VALUES( ? , ? , ?)");
             stmt.setString(1, clubName);
             stmt.setString(2, userEmail);
             stmt.setString(3, role);
@@ -172,6 +173,7 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
             return clubUserExist(clubName, userEmail);
         } catch (SQLException e ) {
             System.out.println("Error in createClubUsers " + e.getMessage());
+            System.out.println(clubName + "-" + userEmail+"-" + role);
         }
         return false;
     }

@@ -125,6 +125,7 @@ public class UserInterestJDBCRepo implements IUserInterestsRepo {
             return userInterestExist(userEmail, interestName);
         } catch (SQLException e){
             System.out.println("Error in createUserInterest " + e.getMessage());
+            System.out.println(userEmail + " - " + interestName);
         }
         return false;
     }

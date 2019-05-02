@@ -16,7 +16,7 @@ public class Controller {
     private IUserEventsRepo userEventRepo;
     private IClubUsersRepo clubUsersRepo;
     private HomepageJDBCRepo homepageRepo;
-    private String databaseURL = References.OFF_CAMPUS_DB_URL;
+    private String databaseURL = References.ON_CAMPUS_DB_URL;
 
     public Controller(){
         userRepo = new UserJDBCRepo(databaseURL);
@@ -266,6 +266,7 @@ public class Controller {
         String[] strTemp = request.body().split("&");
         String userEmail = strTemp[0].split("=")[1];
         String intName = strTemp[1].split("=")[1];
+        intName = intName.substring(0, intName.length()-1);
 
         boolean createSuccess = userIntRepo.createUserInterest(userEmail, intName);
 
@@ -346,7 +347,9 @@ public class Controller {
         String clubName = strTemp[0].split("=")[1];
         String userEmail = strTemp[1].split("=")[1];
         String role = strTemp[2].split("=")[1];
+        role = "Member";
 
+        System.out.println(clubName + "-" + userEmail+"-" + role);
         boolean createSuccess = clubUsersRepo.createClubUser(clubName, userEmail, role);
 
         if(createSuccess)
