@@ -22,7 +22,9 @@ public class HomepageJDBCRepo {
                     "SELECT Event.Event_Name, Event.Start_Time " +
                     "FROM Event " +
                     "Inner Join UserEvents on Event.idNumber=UserEvents.EventIDNumber " +
-                    "WHERE UserEvents.UserEmail = ? ");
+                    "WHERE UserEvents.UserEmail = ? AND " +
+                        "DATE(Event.Start_Time) = CURDATE() " +
+                    "ORDER BY Event.Start_Time; ");
             stmt.setString(1, userEmail);
             rs = stmt.executeQuery();
 
