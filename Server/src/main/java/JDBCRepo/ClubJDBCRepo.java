@@ -95,7 +95,7 @@ public class ClubJDBCRepo implements IClubRepo {
             }
             sb.append("]");
             dbConn.close();
-            return new Gson().toJson(c);
+            return sb.toString();
         } catch (SQLException e){
             System.out.println("Error in getClub " + e.getMessage());
         }
@@ -178,5 +178,43 @@ public class ClubJDBCRepo implements IClubRepo {
             System.out.println("Error in JDBCRepo.ClubJDBCRepo:ClubExist, " + e.getMessage());
         }
         return result;
+    }
+
+    @Override
+    public String getClubsBasedOnInterest(String email) {
+        StringBuilder sb = new StringBuilder();
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+
+            PreparedStatement stmt = conn.prepareStatement(
+                    "SELECT * " +
+                        "FROM Clubs " +
+                        "WHERE Clubs.Name IN ( " +
+                            "SELECT ClubInterests.ClubName " +
+                            "FROM UserInterests join ClubInterests ON UserInterests.InterestName = ClubInterests.InterestName " +
+                            "WHERE UserInterests.UserEmail = ? ); ");
+            stmt.setString(1, email);
+            rs = stmt.executeQuery();
+
+            sb.append("[");
+            Club c = new Club();
+            while(rs.next()){
+//                Club c = new Club();
+                c.setName(rs.getString("name"));
+                c.setLocation(rs.getString("location"));
+                c.setClubEmail(rs.getString("clubEmail"));
+                c.setDescription(rs.getString("description"));
+                sb.append( new Gson().toJson(c));
+            }
+            sb.append("]");
+            dbConn.close();
+
+            return sb.toString();
+        } catch (SQLException e){
+            System.out.println("Error in getClub " + e.getMessage());
+        }
+        return sb.toString();
     }
 }

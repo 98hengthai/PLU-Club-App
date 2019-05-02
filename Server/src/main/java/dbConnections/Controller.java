@@ -373,4 +373,8 @@ public class Controller {
     public String getHomePageEventsForUser(Request request, Response resp){
         return homepageRepo.getUserEventsAndTime(request.params(":userEmail"));
     }
+
+    public String getClubsBasedOnInterest(Request request, Response response) {
+        return clubRepo.getClubsBasedOnInterest(request.params(":email"));
+    }
 }
