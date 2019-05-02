@@ -18,6 +18,7 @@ public class APIMain {
         get("/event/name/:name", controller::getEventGivenName);
         get("/event/id/:idNum", controller::getEventGivenID);
         get("/event/clubName/:cName", controller::getEventGivenClub);
+        get("/event/user/:email", controller::getEventGivenUserEmail);
         post("/event", controller::createEvent);
         put("/event/:idNum", controller::updateEvent);
         delete("/event/id/:idNum", controller::deleteEventGivenID);

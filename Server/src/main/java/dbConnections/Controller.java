@@ -99,6 +99,10 @@ public class Controller {
         return eventRepo.getEventGivenClub(request.params(":cName"));
     }
 
+    public String getEventGivenUserEmail(Request request, Response resp){
+        return eventRepo.getEventGivenEmail(request.params(":email"));
+    }
+
     public String createEvent(Request request, Response resp){
         String[] strTemp = request.body().split("&");
         String id = strTemp[0].split("=")[1];

@@ -28,4 +28,6 @@ public interface IEventRepo {
     boolean eventExist(String idNum);
 
     boolean eventExistGivenName(String evName);
+
+    String getEventGivenEmail(String params);
 }

@@ -169,6 +169,46 @@ public class EventJDBCRepo implements IEventRepo {
     }
 
     @Override
+    public String getEventGivenEmail(String email){
+        StringBuilder sb = new StringBuilder();
+        ResultSet rs;
+        Gson gson = new Gson();
+
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "SELECT * " +
+                    "FROM Event " +
+                    "WHERE Event.ClubName in " +
+                        "(SELECT ClubName " +
+                        "FROM ClubUsers " +
+                        "WHERE UserEmail = ?)");
+            stmt.setString(1, email);
+            rs = stmt.executeQuery();
+
+            sb.append("[");
+            while(rs.next()){
+                Event e = new Event();
+                e.setIdNumber(rs.getString("idNumber"));
+                e.setName(rs.getString("Event_Name"));
+                e.setLocation(rs.getString("Location"));
+                e.setStart_time((rs.getString("Start_Time")));
+                e.setEnd_time(rs.getString("End_Time"));
+                e.setRepeat(rs.getString("Repeating"));
+                e.setClubName(rs.getString("ClubName"));
+                sb.append( gson.toJson(e) ).append(",\n ");
+            }
+            if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
+            sb.append("]");
+
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("Error in getEvents " + e.getMessage());
+        }
+        return sb.toString();
+    }
+
+    @Override
     /**
      * Returns true if event was created, else returns false
      *  idNum auto populates so there is no need to pass that integer
