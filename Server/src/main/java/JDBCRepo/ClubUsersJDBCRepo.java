@@ -57,6 +57,9 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
 
         try{
             conn = dbConn.connect();
+            while(conn.isClosed()){
+                conn = dbConn.connect();
+            }
             PreparedStatement stmt = conn.prepareStatement("" +
                     "SELECT * " +
                     "FROM ClubUsers " +
@@ -68,6 +71,7 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
 //            sb.append("[");
 
             while(rs.next()){
+                System.out.println(rs.getString("ClubName"));
                 ClubUsers cUser = new ClubUsers();
                 cUser.setClubName(rs.getString("ClubName"));
                 cUser.setUserEmail(rs.getString("UserEmail"));
@@ -81,6 +85,7 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
             dbConn.close();
         } catch (SQLException e){
             System.out.println("Error in ClubUsersJDBCRepo: GetClubsGivenUser: " + e.getMessage());
+
         }
 
         if(clubUsersList.isEmpty())
@@ -128,6 +133,7 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
         StringBuilder sb = new StringBuilder();
         ResultSet rs;
         Gson gson = new Gson();
+        List<ClubUsers> clubUsersList = new ArrayList<>();
 
         try{
             conn = dbConn.connect();
@@ -147,12 +153,14 @@ public class ClubUsersJDBCRepo implements IClubUsersRepo {
                 cUser.setClubName(rs.getString("ClubName"));
                 cUser.setUserEmail(rs.getString("UserEmail"));
                 cUser.setRole(rs.getString("Role"));
+                clubUsersList.add(cUser);
                 sb.append(gson.toJson(cUser)).append(",\n");
             }
             if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
             sb.append("]");
 
             dbConn.close();
+            return gson.toJson(clubUsersList);
         } catch (SQLException e){
             System.out.println("Error in ClubUsersJDBCRepo: GetAllClubUsers: " + e.getMessage());
         }

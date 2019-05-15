@@ -9,7 +9,7 @@ public class APIMain {
         //Clubs Commands
         get("/clubs", controller::getAllClubs);
         get("/clubs/:name", controller::getClub);
-        get("/clubs/interestEmail/:email", controller::getClubsBasedOnInterest);
+        get("/clubs/interestEmail/:email", controller::getClubsBasedOnInterest); //getClub given the interests of a user email
         post("/clubs", controller::createClub);
         put("/clubs/:name", controller::updateClub);
         delete("/clubs/:name", controller::deleteClub);  //remove remove
