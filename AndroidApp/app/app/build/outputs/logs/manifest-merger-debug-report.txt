@@ -1,0 +1,303 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\b17657b57db2decb36510bd6a6181fb7\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\45db648fd8c11b32eefddce1dd3209a5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\ca28be258fc08ccfc974f5897212a358\AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:17:1-30:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\14b960106dc63ba7e0da73e7c1256464\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b66270088fc24898c9a0456cdae7e397\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\5cee04ed2dd332e782a5176baa586688\AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\e9c3b74037e4239a1574fa5732a6e093\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\89016dc3bd13c82ee380f379523a2f4a\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\d2cac94bd8cfd112b724aae392f18334\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\9afd42092f3bcde3c289a9084d457bc7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\9d098a5ec4e8bea9383160982708355f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\2d841b14189ca7e2bdbb75a80ca41731\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\ee618d50ae05e124ec76fda286b4f4b0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\e555ac984c0c84bac161cde641e04c68\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\3fd706e36275206dd383d3d6ab9ba17c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\b8be7a08cff6471f752d85b5564adcea\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\fa5ce9f4002eb5bfa1ceebef8dccfa96\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\15441dadef759f789cb7fa345075b1ac\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\880ec96110e2bdf148aff70e44c1c637\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\2a68ee09440594b892995932bb33ad2c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\c911755c704cf242556e98067317f4d8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\008e72c9f6ba0a693947a575c077c36b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\4c6c3502162ba69fd46c0b08884f9805\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\5cb53ec04c8d587a4ca56ac62e1fb1f3\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ea5089cddfb4bf76ae1e1425f048f2db\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\0364e3b572379e82a97008ec0b8edc1a\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\88b644a7d000df0720e330dee18bbc55\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\39ff10216d661346278376d00856e425\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\93a7fed978db142be2d5bf766a779b28\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\9635828450707d2a3ef8e78d1a4d3447\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\cb94a6185760b71b4cef12780c317fc5\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\1dfa4f4aa3c0645ad0e3d27ce8d74f05\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\301b2411a59b1be43b68cd3b586a8e65\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\359486379292b26754cce716975430a7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\b201cac31c9d66f6e66f1e018bdf9e99\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\72355995eccbf750f874cb37bec8ee4e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\002914d7707361636fafaa5aa04c848d\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+	package
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:3:5-44
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:6:22-64
+application
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:8:5-40:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\b17657b57db2decb36510bd6a6181fb7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\b17657b57db2decb36510bd6a6181fb7\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\ca28be258fc08ccfc974f5897212a358\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\ca28be258fc08ccfc974f5897212a358\AndroidManifest.xml:9:5-20
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:22:5-28:19
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:22:5-28:19
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\5cee04ed2dd332e782a5176baa586688\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\5cee04ed2dd332e782a5176baa586688\AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\d2cac94bd8cfd112b724aae392f18334\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\d2cac94bd8cfd112b724aae392f18334\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\5cb53ec04c8d587a4ca56ac62e1fb1f3\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\5cb53ec04c8d587a4ca56ac62e1fb1f3\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ea5089cddfb4bf76ae1e1425f048f2db\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ea5089cddfb4bf76ae1e1425f048f2db\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\0364e3b572379e82a97008ec0b8edc1a\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\0364e3b572379e82a97008ec0b8edc1a\AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\301b2411a59b1be43b68cd3b586a8e65\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\301b2411a59b1be43b68cd3b586a8e65\AndroidManifest.xml:9:5-20
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ea5089cddfb4bf76ae1e1425f048f2db\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:12:9-37
+	android:roundIcon
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:15:9-40
+	android:networkSecurityConfig
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:9:9-69
+activity#example.club.plu.navbarlayout.view.MainActivity
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:17:9-21:20
+	android:label
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:19:13-38
+	android:theme
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:20:13-56
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:18:13-46
+activity#example.club.plu.navbarlayout.view.club.ClubHomePageActivity
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:23:9-25:59
+	android:theme
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:25:13-56
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:24:13-59
+activity#example.club.plu.navbarlayout.view.club.ClubSurveyActivity
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:27:9-29:58
+	android:theme
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:29:13-56
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:28:13-57
+activity#example.club.plu.navbarlayout.view.login.LogInActivity
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:31:9-39:20
+	android:theme
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:33:13-56
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:32:13-53
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:35:13-38:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:36:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:37:17-77
+	android:name
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml:37:27-74
+uses-sdk
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\b17657b57db2decb36510bd6a6181fb7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\b17657b57db2decb36510bd6a6181fb7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\45db648fd8c11b32eefddce1dd3209a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\45db648fd8c11b32eefddce1dd3209a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\ca28be258fc08ccfc974f5897212a358\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\ca28be258fc08ccfc974f5897212a358\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\14b960106dc63ba7e0da73e7c1256464\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\14b960106dc63ba7e0da73e7c1256464\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b66270088fc24898c9a0456cdae7e397\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\b66270088fc24898c9a0456cdae7e397\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\5cee04ed2dd332e782a5176baa586688\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\5cee04ed2dd332e782a5176baa586688\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\e9c3b74037e4239a1574fa5732a6e093\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\e9c3b74037e4239a1574fa5732a6e093\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\89016dc3bd13c82ee380f379523a2f4a\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\89016dc3bd13c82ee380f379523a2f4a\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\d2cac94bd8cfd112b724aae392f18334\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-tasks-16.0.1.aar\d2cac94bd8cfd112b724aae392f18334\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\9afd42092f3bcde3c289a9084d457bc7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\9afd42092f3bcde3c289a9084d457bc7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\9d098a5ec4e8bea9383160982708355f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\9d098a5ec4e8bea9383160982708355f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\2d841b14189ca7e2bdbb75a80ca41731\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\2d841b14189ca7e2bdbb75a80ca41731\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\ee618d50ae05e124ec76fda286b4f4b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\ee618d50ae05e124ec76fda286b4f4b0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\e555ac984c0c84bac161cde641e04c68\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\e555ac984c0c84bac161cde641e04c68\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\3fd706e36275206dd383d3d6ab9ba17c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\3fd706e36275206dd383d3d6ab9ba17c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\b8be7a08cff6471f752d85b5564adcea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\b8be7a08cff6471f752d85b5564adcea\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\fa5ce9f4002eb5bfa1ceebef8dccfa96\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\fa5ce9f4002eb5bfa1ceebef8dccfa96\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\15441dadef759f789cb7fa345075b1ac\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\15441dadef759f789cb7fa345075b1ac\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\880ec96110e2bdf148aff70e44c1c637\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\880ec96110e2bdf148aff70e44c1c637\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\2a68ee09440594b892995932bb33ad2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\2a68ee09440594b892995932bb33ad2c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\c911755c704cf242556e98067317f4d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\c911755c704cf242556e98067317f4d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\008e72c9f6ba0a693947a575c077c36b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\008e72c9f6ba0a693947a575c077c36b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\4c6c3502162ba69fd46c0b08884f9805\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\4c6c3502162ba69fd46c0b08884f9805\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\5cb53ec04c8d587a4ca56ac62e1fb1f3\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\5cb53ec04c8d587a4ca56ac62e1fb1f3\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ea5089cddfb4bf76ae1e1425f048f2db\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ea5089cddfb4bf76ae1e1425f048f2db\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\0364e3b572379e82a97008ec0b8edc1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\0364e3b572379e82a97008ec0b8edc1a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\88b644a7d000df0720e330dee18bbc55\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\88b644a7d000df0720e330dee18bbc55\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\39ff10216d661346278376d00856e425\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\39ff10216d661346278376d00856e425\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\93a7fed978db142be2d5bf766a779b28\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\93a7fed978db142be2d5bf766a779b28\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\9635828450707d2a3ef8e78d1a4d3447\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\9635828450707d2a3ef8e78d1a4d3447\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\cb94a6185760b71b4cef12780c317fc5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\cb94a6185760b71b4cef12780c317fc5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\1dfa4f4aa3c0645ad0e3d27ce8d74f05\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\1dfa4f4aa3c0645ad0e3d27ce8d74f05\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\301b2411a59b1be43b68cd3b586a8e65\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\301b2411a59b1be43b68cd3b586a8e65\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\359486379292b26754cce716975430a7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\359486379292b26754cce716975430a7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\b201cac31c9d66f6e66f1e018bdf9e99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\b201cac31c9d66f6e66f1e018bdf9e99\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\72355995eccbf750f874cb37bec8ee4e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\72355995eccbf750f874cb37bec8ee4e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\002914d7707361636fafaa5aa04c848d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\002914d7707361636fafaa5aa04c848d\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\hengt\Desktop\pluclubapp\AndroidApp\app\app\src\main\AndroidManifest.xml
+provider#android.arch.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:25:13-68
+	android:multiprocess
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [android.arch.lifecycle:extensions:1.1.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\extensions-1.1.1.aar\202088500210a465c6ab81bfc0015402\AndroidManifest.xml:24:13-83
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\bdb9f000d454ed615c933a14cb846427\AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-base-16.0.1.aar\b8842a851963e530dab435e9d7ecb7b9\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.0.1.aar\e764e397d90ed0bc292b99a8fade492d\AndroidManifest.xml:24:13-58
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\5cb53ec04c8d587a4ca56ac62e1fb1f3\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\5cb53ec04c8d587a4ca56ac62e1fb1f3\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:support-v4:26.1.0] C:\Users\hengt\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\b9da87b2564850f485424d9bae4ce3c1\AndroidManifest.xml:27:13-51
