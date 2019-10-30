@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"name":"classes","index":0,"scopes":["PROJECT","SUB_PROJECTS"],"types":["CLASSES"],"format":"DIRECTORY","present":true},{"name":"enhanced_classes","index":1,"scopes":["PROJECT","SUB_PROJECTS"],"types":["CLASSES_ENHANCED"],"format":"DIRECTORY","present":true}]
+=======
+[{"name":"classes","index":0,"scopes":["SUB_PROJECTS","PROJECT"],"types":["CLASSES"],"format":"DIRECTORY","present":true},{"name":"enhanced_classes","index":1,"scopes":["SUB_PROJECTS","PROJECT"],"types":["CLASSES_ENHANCED"],"format":"DIRECTORY","present":true}]
+>>>>>>> d269bff646837bdb485999850b1097b0d0736da4

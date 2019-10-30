@@ -17,4 +17,6 @@ public interface IClubRepo {
     public boolean deleteClub(String name);
 
     public boolean clubExist(String name);
+
+    String getClubsBasedOnInterest(String email);
 }

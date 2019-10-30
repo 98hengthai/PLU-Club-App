@@ -8,11 +8,19 @@ import java.util.List;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+<<<<<<< HEAD
 import example.club.plu.navbarlayout.utils.AppExecutors;
 import example.club.plu.navbarlayout.model.event.Event;
 import example.club.plu.navbarlayout.model.event.Home;
 import example.club.plu.navbarlayout.model.event.UserEvent;
 import example.club.plu.navbarlayout.ServiceGenerator;
+=======
+import example.club.plu.navbarlayout.AppExecutors;
+import example.club.plu.navbarlayout.model.event.Event;
+import example.club.plu.navbarlayout.model.event.Home;
+import example.club.plu.navbarlayout.model.event.UserEvent;
+import example.club.plu.navbarlayout.request.ServiceGenerator;
+>>>>>>> d269bff646837bdb485999850b1097b0d0736da4
 import example.club.plu.navbarlayout.utils.Constants;
 import retrofit2.Call;
 import retrofit2.Callback;

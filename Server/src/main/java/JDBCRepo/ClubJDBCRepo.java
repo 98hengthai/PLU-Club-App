@@ -6,6 +6,8 @@ import com.google.gson.Gson;
 import entities.Club;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClubJDBCRepo implements IClubRepo {
     private Connection conn;
@@ -21,7 +23,7 @@ public class ClubJDBCRepo implements IClubRepo {
         try{
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
-            "INSERT INTO Clubs VALUES ( ? , ? , ? , ? )");
+                    "INSERT INTO Clubs VALUES ( ? , ? , ? , ? )");
             stmt.setString(1, clubName);
             stmt.setString(2, location);
             stmt.setString(3, clubEmail);
@@ -40,12 +42,13 @@ public class ClubJDBCRepo implements IClubRepo {
         StringBuilder sb = new StringBuilder();
         ResultSet resultSet;
         Gson gson = new Gson();
+        List<Club> clubList = new ArrayList<>();
 
         try {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
-                        "FROM Clubs");
+                            "FROM Clubs");
             resultSet = stmt.executeQuery();
 
             //Add clubsFromDB to list clubs to return
@@ -56,12 +59,14 @@ public class ClubJDBCRepo implements IClubRepo {
                 c.setLocation(resultSet.getString("location"));
                 c.setClubEmail(resultSet.getString("clubEmail"));
                 c.setDescription(resultSet.getString("description"));
+                clubList.add(c);
                 sb.append( gson.toJson(c) ).append(",\n ");
             }
             if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
             sb.append("]");
 
             dbConn.close();
+            return gson.toJson(clubList);
         } catch (SQLException e) {
             System.out.println("Error in getClubs " + e.getMessage());
         }
@@ -77,15 +82,16 @@ public class ClubJDBCRepo implements IClubRepo {
             conn = dbConn.connect();
 
             PreparedStatement stmt = conn.prepareStatement(
-                "SELECT * " +
-                    "FROM Clubs " +
-                    "WHERE Clubs.Name = ? ");
+                    "SELECT * " +
+                            "FROM Clubs " +
+                            "WHERE Clubs.Name = ? ");
             stmt.setString(1, name);
             rs = stmt.executeQuery();
 
             sb.append("[");
+            Club c = new Club();
             while(rs.next()){
-                Club c = new Club();
+//                Club c = new Club();
                 c.setName(rs.getString("name"));
                 c.setLocation(rs.getString("location"));
                 c.setClubEmail(rs.getString("clubEmail"));
@@ -93,8 +99,9 @@ public class ClubJDBCRepo implements IClubRepo {
                 sb.append( new Gson().toJson(c));
             }
             sb.append("]");
-
             dbConn.close();
+//            return sb.toString();
+            return new Gson().toJson(c);
         } catch (SQLException e){
             System.out.println("Error in getClub " + e.getMessage());
         }
@@ -112,11 +119,11 @@ public class ClubJDBCRepo implements IClubRepo {
 
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
-                "UPDATE Clubs "+
-                        "SET Location = ? ," +
-                        "ClubEmail = ? ," +
-                        "Description = ? " +
-                        "WHERE Clubs.Name = ?");
+                    "UPDATE Clubs "+
+                            "SET Location = ? ," +
+                            "ClubEmail = ? ," +
+                            "Description = ? " +
+                            "WHERE Clubs.Name = ?");
 
             stmt.setString(1, cLoc);
             stmt.setString(2, cEmail);
@@ -141,8 +148,8 @@ public class ClubJDBCRepo implements IClubRepo {
         try{
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
-                "DELETE FROM Clubs " +
-                    "WHERE Clubs.Name = ? ");
+                    "DELETE FROM Clubs " +
+                            "WHERE Clubs.Name = ? ");
             stmt.setString(1, name);
             stmt.executeQuery();
             dbConn.close();
@@ -163,9 +170,9 @@ public class ClubJDBCRepo implements IClubRepo {
             conn = dbConn.connect();
 
             PreparedStatement stmt = conn.prepareStatement(
-                "SELECT * " +
-                    "FROM Clubs " +
-                    "WHERE Clubs.Name = ?");
+                    "SELECT * " +
+                            "FROM Clubs " +
+                            "WHERE Clubs.Name = ?");
 
             stmt.setString(1, name);
             rs = stmt.executeQuery();
@@ -177,5 +184,42 @@ public class ClubJDBCRepo implements IClubRepo {
             System.out.println("Error in JDBCRepo.ClubJDBCRepo:ClubExist, " + e.getMessage());
         }
         return result;
+    }
+
+    @Override
+    public String getClubsBasedOnInterest(String email) {
+        StringBuilder sb = new StringBuilder();
+        ResultSet rs;
+
+        try{
+            conn = dbConn.connect();
+
+            PreparedStatement stmt = conn.prepareStatement(
+                    "SELECT * " +
+                            "FROM Clubs " +
+                            "WHERE Clubs.Name IN ( " +
+                            "SELECT ClubInterests.ClubName " +
+                            "FROM UserInterests join ClubInterests ON UserInterests.InterestName = ClubInterests.InterestName " +
+                            "WHERE UserInterests.UserEmail = ? ); ");
+            stmt.setString(1, email);
+            rs = stmt.executeQuery();
+
+            sb.append("[");
+            List<Club> cList = new ArrayList<>();
+            while(rs.next()){
+                Club c = new Club();
+                c.setName(rs.getString("name"));
+                c.setLocation(rs.getString("location"));
+                c.setClubEmail(rs.getString("clubEmail"));
+                c.setDescription(rs.getString("description"));
+                cList.add(c);
+            }
+
+            dbConn.close();
+            return new Gson().toJson(cList);
+        } catch (SQLException e){
+            System.out.println("Error in getClub " + e.getMessage());
+        }
+        return sb.toString();
     }
 }

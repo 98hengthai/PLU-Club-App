@@ -24,7 +24,8 @@ public class EventJDBCRepo implements IEventRepo {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
-                        "FROM Event ");
+                        "FROM Event " +
+                        "ORDER BY Event.Start_Time");
             rs = stmt.executeQuery();
 
             //Add all events to a string and return
@@ -61,7 +62,8 @@ public class EventJDBCRepo implements IEventRepo {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
                             "FROM Event " +
-                            "WHERE Event.Event_Name = ?");
+                            "WHERE Event.Event_Name = ? " +
+                            "ORDER BY Event.Start_Time ");
             stmt.setString(1, eventName);
             rs = stmt.executeQuery();
 
@@ -99,7 +101,8 @@ public class EventJDBCRepo implements IEventRepo {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
                             "FROM Event " +
-                            "WHERE Event.idNumber = ?");
+                            "WHERE Event.idNumber = ? " +
+                            "ORDER BY Event.Start_Time");
             stmt.setString(1, idNum);
             rs = stmt.executeQuery();
 
@@ -137,11 +140,52 @@ public class EventJDBCRepo implements IEventRepo {
             PreparedStatement stmt = conn.prepareStatement(
                     "SELECT * " +
                             "FROM Event " +
-                            "WHERE Event.ClubName = ?");
+                            "WHERE Event.ClubName = ? " +
+                            "ORDER BY Event.Start_Time");
             stmt.setString(1, clubName);
             rs = stmt.executeQuery();
 
             //Add all events to a string and return
+            sb.append("[");
+            while(rs.next()){
+                Event e = new Event();
+                e.setIdNumber(rs.getString("idNumber"));
+                e.setName(rs.getString("Event_Name"));
+                e.setLocation(rs.getString("Location"));
+                e.setStart_time((rs.getString("Start_Time")));
+                e.setEnd_time(rs.getString("End_Time"));
+                e.setRepeat(rs.getString("Repeating"));
+                e.setClubName(rs.getString("ClubName"));
+                sb.append( gson.toJson(e) ).append(",\n ");
+            }
+            if(sb.length() > 3) sb.deleteCharAt(sb.length() - 3);
+            sb.append("]");
+
+            dbConn.close();
+        } catch (SQLException e){
+            System.out.println("Error in getEvents " + e.getMessage());
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public String getEventGivenEmail(String email){
+        StringBuilder sb = new StringBuilder();
+        ResultSet rs;
+        Gson gson = new Gson();
+
+        try{
+            conn = dbConn.connect();
+            PreparedStatement stmt = conn.prepareStatement("" +
+                    "SELECT * " +
+                    "FROM Event " +
+                    "WHERE Event.ClubName in " +
+                        "(SELECT ClubName " +
+                        "FROM ClubUsers " +
+                        "WHERE UserEmail = ?)");
+            stmt.setString(1, email);
+            rs = stmt.executeQuery();
+
             sb.append("[");
             while(rs.next()){
                 Event e = new Event();
@@ -173,13 +217,14 @@ public class EventJDBCRepo implements IEventRepo {
         try {
             conn = dbConn.connect();
             PreparedStatement stmt = conn.prepareStatement(
-                "INSERT INTO Event VALUES( ? , ? , ? , ? , ? , ? ");
-            stmt.setString(1, evName);
-            stmt.setString(2, loc);
-            stmt.setString(3, stTime);
-            stmt.setString(4, endTime);
-            stmt.setString(5, rep);
-            stmt.setString(6, cName);
+                "INSERT INTO Event VALUES( ?, ? , ? , ? , ? , ? , ? )");
+            stmt.setInt(1, 0);
+            stmt.setString(2, evName);
+            stmt.setString(3, loc);
+            stmt.setString(4, stTime);
+            stmt.setString(5, endTime);
+            stmt.setString(6, rep);
+            stmt.setString(7, cName);
             stmt.execute();
             conn.close();
             return eventExistGivenName(cName);

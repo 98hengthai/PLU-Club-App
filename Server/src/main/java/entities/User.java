@@ -10,10 +10,11 @@ public class User {
     public User() {
     }
 
-    public User(String email, String name, boolean isStudent) {
+    public User(String email, String name, String gradYear, boolean isStudent) {
         super();
         this.name = name;
         this.email = email;
+        this.gradYear = gradYear;
         this.isStudent = isStudent;
     }
 

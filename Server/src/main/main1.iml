@@ -46,7 +46,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+<<<<<<< HEAD
     <orderEntry type="library" exported="" name="Maven: org.mariadb.jdbc:mariadb-java-client:1.1.7" level="project" />
     <orderEntry type="library" exported="" name="Maven: mysql:mysql-connector-java:8.0.15" level="project" />
+=======
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.15" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.jna:jna:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: net.java.dev.jna:jna:platform:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20180130" level="project" />
+    <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:1.1.7" level="project" />
+>>>>>>> d269bff646837bdb485999850b1097b0d0736da4
   </component>
 </module>

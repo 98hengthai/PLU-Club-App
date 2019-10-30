@@ -1,23 +1,39 @@
 package dbConnections;
 
-import JDBCRepo.ClubJDBCRepo;
-import JDBCRepo.EventJDBCRepo;
-import JDBCRepo.UserJDBCRepo;
+import JDBCRepo.*;
 import common.References;
 import spark.Request;
 import spark.Response;
-import spark.Route;
+import Interfaces.*;
 
 public class Controller {
+<<<<<<< HEAD
     private UserJDBCRepo userRepo;
     private ClubJDBCRepo clubRepo;
     private EventJDBCRepo eventRepo;
+=======
+    private IUsersRepo userRepo;
+    private IClubRepo clubRepo;
+    private IEventRepo eventRepo;
+    private IInterestsRepo intRepo;
+    private IClubInterestsRepo clubIntRepo;
+    private IUserInterestsRepo userIntRepo;
+    private IUserEventsRepo userEventRepo;
+    private IClubUsersRepo clubUsersRepo;
+    private HomepageJDBCRepo homepageRepo;
+>>>>>>> d269bff646837bdb485999850b1097b0d0736da4
     private String databaseURL = References.ON_CAMPUS_DB_URL;
 
     public Controller(){
         userRepo = new UserJDBCRepo(databaseURL);
         clubRepo = new ClubJDBCRepo(databaseURL);
         eventRepo = new EventJDBCRepo(databaseURL);
+        intRepo = new InterestJDBCRepo(databaseURL);
+        clubIntRepo = new ClubInterestJDBCRepo(databaseURL);
+        userIntRepo = new UserInterestJDBCRepo(databaseURL);
+        userEventRepo = new UserEventsJDBCRepo(databaseURL);
+        clubUsersRepo = new ClubUsersJDBCRepo(databaseURL);
+        homepageRepo = new HomepageJDBCRepo(databaseURL);
     }
 
     //////////////////////////////////////////////////////////////
@@ -33,32 +49,41 @@ public class Controller {
     }
 
     public String createClub(Request request, Response resp){
-        //Encode as body instead of into URL
-        String name = request.queryParams("name");
-        String loc = request.queryParams("location");
-        String cEmail = request.queryParams("clubEmail");
-        String desc = request.queryParams("description");
+        //TODO: Beautify the split process
+        String[] strTemp = request.body().split("&");
+        String name = strTemp[0].split("=")[1];
+        String loc = strTemp[0].split("=")[1];
+        String cEmail = strTemp[0].split("=")[1];
+        String desc = strTemp[0].split("=")[1];
         boolean temp = clubRepo.createClub(name, loc, cEmail, desc);
         if(temp){   //Return a status code
-            return "Club successfully created";
+            return References.API_CODE_201;
         }
-        return "Club Created";
+        return References.ERROR_403_CREATE;
     }
 
     public String updateClub(Request request, Response resp){
-        //TODO: How to retrieve data from the request in the API link
-        //Return the club information in JSON format
-        return "Not yet implemented";
+        String[] strTemp = request.body().split("&");
+        String name = strTemp[0].split("=")[1];
+        String loc = strTemp[0].split("=")[1];
+        String cEmail = strTemp[0].split("=")[1];
+        String desc = strTemp[0].split("=")[1];
+        try {
+            clubRepo.editClub(name, loc, cEmail, desc);
+        } catch (Exception e){
+            System.out.println("Error in create Club");
+            return References.ERROR_403_EDIT;
+        }
+        return References.API_CODE_201;
     }
 
     public String deleteClub(Request request, Response resp){
-        //TODO: Return using Status Code
         //If club exists, say delete failed
         boolean temp = clubRepo.deleteClub(request.params(":name"));
         if(temp) {
-            return "Delete successful";
+            return References.API_CODE_200;
         }
-        return "Delete failed";
+        return References.ERROR_403_DELETE;
     }
 
     //////////////////////////////////////////////////////////////
@@ -80,20 +105,24 @@ public class Controller {
         return eventRepo.getEventGivenClub(request.params(":cName"));
     }
 
+    public String getEventGivenUserEmail(Request request, Response resp){
+        return eventRepo.getEventGivenEmail(request.params(":email"));
+    }
+
     public String createEvent(Request request, Response resp){
-        //TODO: Encode as body instead of into URL
-        String id = request.queryParams("idNum");
-        String evName = request.queryParams("evName");
-        String loc = request.queryParams("location");
-        String stTime = request.queryParams("stTime");
-        String endTime = request.queryParams("endTime");
-        String rep = request.queryParams("repeat");
-        String cName = request.queryParams("clubName");
+        String[] strTemp = request.body().split("&");
+        String id = strTemp[0].split("=")[1];
+        String evName = strTemp[1].split("=")[1];
+        String loc = strTemp[2].split("=")[1];
+        String stTime = strTemp[3].split("=")[1];
+        String endTime = strTemp[4].split("=")[1];
+        String rep = strTemp[5].split("=")[1];
+        String cName = strTemp[6].split("=")[1];
+        System.out.printf("%s, %s, %s, %s, %s, %s, %s", id, evName, loc, stTime, endTime, rep ,cName);
         boolean temp = eventRepo.createEvent(id, evName, loc, stTime, endTime, rep, cName);
-        if(temp){   //TODO: Return a status code
-            return "Club successfully created";
-        }
-        return "Club Created";
+        if(temp)
+            return References.API_CODE_201;
+        return References.ERROR_403_CREATE + " " + request.body();
     }
 
     public String updateEvent(Request request, Response resp){
@@ -102,24 +131,21 @@ public class Controller {
     }
 
     public String deleteEventGivenID(Request request, Response resp){
-        //TODO
-        //TODO: Return using Status Code
         //If club exists, say delete failed
         boolean temp = eventRepo.deleteEvent(request.params(":idNumber"));
         if(temp) {
-            return "Delete successful";
+            return References.API_CODE_200;
         }
-        return "Delete failed";
+        return References.ERROR_403_DELETE;
     }
 
     public String deleteEventGivenName(Request request, Response resp){
-        //TODO: Return using Status Code
         //If club exists, say delete failed
         boolean temp = eventRepo.deleteEventGivenName(request.params(":name"));
         if(temp) {
-            return "Delete successful";
+            return References.API_CODE_200;
         }
-        return "Delete failed";
+        return References.ERROR_403_DELETE;
     }
 
     //////////////////////////////////////////////////////////////
@@ -138,33 +164,223 @@ public class Controller {
     }
 
     public String createUser(Request request, Response resp){
-        return "Not yet implemented";
+        System.out.println(request.body());
+        String[] strTemp = request.body().split("&");
+        String email = strTemp[0].split("=")[1];
+        String name = strTemp[1].split("=")[1];
+        String gradYear = strTemp[2].split("=")[1];
+        String isStudent = strTemp[3].split("=")[1];
+        System.out.printf("%s, %s, %s, %s", email, name, gradYear, isStudent);
+
+        boolean temp = userRepo.createUser(email, name, gradYear, isStudent);
+        if(temp)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE + " " + request.body();
     }
 
     public String updateUser(Request request, Response resp){
-        return "Not yet implemented";
+        //TODO
+        return References.ERROR_CODE_503;
     }
 
+    public String updateUserGivenName(Request request, Response resp){
+        //TODO
+        return References.ERROR_CODE_503;}
+
     public String deleteUser(Request request, Response resp){
-        return "Not yet implemented";
+        boolean temp = userRepo.deleteUser(request.params(":email"));
+        if(temp)
+            return References.API_CODE_200;
+        return References.ERROR_403_DELETE;
     }
 
     public String deleteUserGivenName(Request request, Response resp){
-        return "Not yet implemented";
+        boolean temp = userRepo.deleteUser(request.params(":name"));
+        if(temp)
+            return References.API_CODE_200;
+        return References.ERROR_403_DELETE;
     }
 
     //////////////////////////////////////////////////////////////
     //                   Interests Commands                     //
     //////////////////////////////////////////////////////////////
     public String getAllInterests(Request request, Response resp){
-        return "Not yet implemented";
+        return intRepo.getInterests();
     }
 
     public String createInterests(Request request, Response resp){
-        return "Not yet implemented";
+        String[] strTemp = request.body().split("&");
+        String interest = strTemp[0].split("=")[1];
+
+        boolean createSuccess = intRepo.createInterest(interest);
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE + " " + request.body();
     }
 
     public String deleteInterests(Request request, Response resp){
-        return "Not yet implemented";
+        boolean temp = intRepo.deleteInterest(request.params(":name"));
+        if(temp)
+            return References.API_CODE_200;
+        return References.ERROR_403_DELETE;
+    }
+
+    //////////////////////////////////////////////////////////////
+    //                   ClubInterests Commands                 //
+    //////////////////////////////////////////////////////////////
+    public String getAllClubInterests(Request request, Response resp){
+        return clubIntRepo.getAllClubInterests();
+    }
+    public String getClubInterestsGivenClub(Request request, Response resp){
+        return clubIntRepo.getClubInterestsGivenClub(request.params(":club"));
+    }
+
+    public String getClubInterestsGivenInt(Request request, Response resp){
+        return clubIntRepo.getClubInterestsGivenInterest(request.params(":interest"));
+    }
+
+    public String createClubInterest(Request request, Response resp){
+        String[] strTemp = request.body().split("&");
+        String intName = strTemp[0].split("=")[1];
+        String clubName = strTemp[1].split("=")[1];
+
+        boolean createSuccess = clubIntRepo.createClubInterest(intName, clubName);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
+    }
+
+    public String deleteClubInterest(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    //////////////////////////////////////////////////////////////
+    //                   UserInterests Commands                 //
+    //////////////////////////////////////////////////////////////
+    public String getAllUserInterests(Request request, Response resp){
+        return userIntRepo.getAllUserInterests();
+    }
+    public String getUserInterestsGivenEmail(Request request, Response resp){
+        return userIntRepo.getUserInterestsGivenUser(request.params(":userEmail"));
+    }
+
+    public String getUserInterestsGivenInt(Request request, Response resp){
+        return userIntRepo.getUserInterestsGivenInterest(request.params(":interest"));
+    }
+
+    public String createUserInterest(Request request, Response resp){
+        String[] strTemp = request.body().split("&");
+        String userEmail = strTemp[0].split("=")[1];
+        String intName = strTemp[1].split("=")[1];
+        intName = intName.substring(0, intName.length()-1);
+
+        boolean createSuccess = userIntRepo.createUserInterest(userEmail, intName);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
+    }
+
+    public String deleteUserInterest(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    //////////////////////////////////////////////////////////////
+    //                   UserEvents Commands                    //
+    //////////////////////////////////////////////////////////////
+    public String getAllUserEvents(Request request, Response resp){
+        return userEventRepo.getAllUserEvents();
+    }
+
+    public String getUserEventsGivenIDNum(Request request, Response resp){
+        return userEventRepo.getUserEventsGivenIDNum(request.params(":idNum"));
+    }
+
+    public String getUserEventsGivenUserEmail(Request request, Response resp){
+        return userEventRepo.getUserEventsGivenUserEmail(request.params(":userEmail"));
+    }
+
+    public String getReply(Request request, Response resp){
+        return userEventRepo.getReplyGivenUserAndEvent(request.params(":eventID"), request.params(":userEmail"));
+    }
+
+    public String createUserEvents(Request request, Response resp){
+        String[] strTemp = request.body().split("&");
+        String eventID = strTemp[0].split("=")[1];
+        String clubName = strTemp[1].split("=")[1];
+        String userEmail = strTemp[2].split("=")[1];
+        String reply = strTemp[3].split("=")[1];
+
+        boolean createSuccess = userEventRepo.createUserEvents(eventID, clubName, userEmail, reply);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
+
+    }
+
+    public String editUserEvents(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    public String deleteUserEvent(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    //////////////////////////////////////////////////////////////
+    //                   ClubUsers Commands                     //
+    //////////////////////////////////////////////////////////////
+    public String getAllClubUsers(Request request, Response resp){
+        return clubUsersRepo.getAllClubUsers();
+    }
+
+    public String getAllClubsGivenUser(Request request, Response resp){
+        return clubUsersRepo.getAllClubsGivenUser(request.params(":userEmail"));
+    }
+
+    public String getAllClubsGivenClub(Request request, Response resp){
+        return clubUsersRepo.getAllUsersGivenClub(request.params(":clubName"));
+    }
+
+    public String getClubUsersRole(Request request, Response resp){
+        return clubUsersRepo.getRoleGivenNameAndClub(request.params(":clubName"), request.params(":userEmail"));
+    }
+
+    public String createClubUsers(Request request, Response resp){
+        String[] strTemp = request.body().split("&");
+        String clubName = strTemp[0].split("=")[1];
+        String userEmail = strTemp[1].split("=")[1];
+        String role = strTemp[2].split("=")[1];
+        role = "Member";
+
+        System.out.println(clubName + "-" + userEmail+"-" + role);
+        boolean createSuccess = clubUsersRepo.createClubUser(clubName, userEmail, role);
+
+        if(createSuccess)
+            return References.API_CODE_201;
+        else
+            return References.ERROR_403_CREATE;
+    }
+
+    public String editClubUsers(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    public String deleteClubUser(Request request, Response resp){
+        return References.ERROR_CODE_503;
+    }
+
+    public String getHomePageEventsForUser(Request request, Response resp){
+        return homepageRepo.getUserEventsAndTime(request.params(":userEmail"));
+    }
+
+    public String getClubsBasedOnInterest(Request request, Response response) {
+        return clubRepo.getClubsBasedOnInterest(request.params(":email"));
     }
 }

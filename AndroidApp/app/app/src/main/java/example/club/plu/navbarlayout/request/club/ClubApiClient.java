@@ -5,6 +5,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,21 @@ import example.club.plu.navbarlayout.model.club.Club;
 import example.club.plu.navbarlayout.model.club.ClubUsers;
 import example.club.plu.navbarlayout.model.club.Interests;
 import example.club.plu.navbarlayout.ServiceGenerator;
+=======
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
+import example.club.plu.navbarlayout.AppExecutors;
+import example.club.plu.navbarlayout.model.club.Club;
+import example.club.plu.navbarlayout.model.club.ClubInterest;
+import example.club.plu.navbarlayout.model.club.ClubUsers;
+import example.club.plu.navbarlayout.model.club.Interests;
+import example.club.plu.navbarlayout.model.club.UserInterest;
+import example.club.plu.navbarlayout.request.ServiceGenerator;
+>>>>>>> d269bff646837bdb485999850b1097b0d0736da4
 import example.club.plu.navbarlayout.utils.Constants;
 import retrofit2.Call;
 import retrofit2.Callback;

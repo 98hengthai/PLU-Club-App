@@ -6,7 +6,11 @@ import android.util.Log;
 
 import retrofit2.*;
 import example.club.plu.navbarlayout.model.user.User;
+<<<<<<< HEAD
 import example.club.plu.navbarlayout.ServiceGenerator;
+=======
+import example.club.plu.navbarlayout.request.ServiceGenerator;
+>>>>>>> d269bff646837bdb485999850b1097b0d0736da4
 
 public class SettingApiClient {
     private static final String TAG = "SettingApiClient";
