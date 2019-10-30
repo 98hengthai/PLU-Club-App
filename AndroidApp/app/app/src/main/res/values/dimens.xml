@@ -6,7 +6,7 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <!--dimension for clubs list in the fragment_clubs_list_item.xml-->
+    <!--dimension for clubs list in the fragment_call_lubs_list_itemitem.xml-->
     <dimen name="recipe_image_height">250dp</dimen>
     <dimen name="recipe_title_text_size">20sp</dimen>
     <dimen name="recipe_publisher_text_size">16sp</dimen>

@@ -22,4 +22,15 @@
     <string name="club_description">This is an example description. This description does not have any valuable information for anyone, nor does it help this app function in any way. However, it does allow the app to look like it would if there were an informative description.</string>
     <string name="navspinner">NavSpinner</string>
     <string name="home_fragment">Home Fragment</string>
+    <string name="end_time">End Time</string>
+    <string name="location">Location</string>
+    <string name="clubname">Clubname</string>
+    <string name="event_name">Event Name</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="attending">Attending?</string>
+    <string name="starttime">StartTime</string>
+    <string name="name">Name</string>
+    <string name="club">Club</string>
+    <string name="new_event">New Event</string>
 </resources>
